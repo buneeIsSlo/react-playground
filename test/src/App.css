@@ -32,7 +32,49 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+body {
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  padding: 5rem;
+}
+
+.nav {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+#home {
+  margin-right: .5rem;
+}
+
+#home,
+#about {
+  padding: 1rem 2rem;
+  background: #404040;
+  color: #fff;
+  text-decoration: none;
+}
+
+.content {
+  background: #eee;
+  padding: 3rem 20rem;
+}
+
+.title {
+  color: skyblue;
+  padding: 0;
+  font-size: 4rem;
+}
+
+.button {
+  padding: 1rem 2rem;
+  cursor: pointer;
 }

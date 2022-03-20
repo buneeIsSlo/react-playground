@@ -13,9 +13,17 @@ const Home = () => {
         setBlogs(newBlogs);
     }
 
+    const bookmark = id => {
+        const newColor = blogs.map(blog => {
+            if (blog.id === id) blog.title = blog.title.includes("🔖") ? blog.title : `${blog.title} 🔖`;
+            return blog;
+        })
+        setBlogs(newColor);
+    }
+
     return (
         <div className="home">
-            < BlogList blogs={blogs} title={"All blogs"} handleDelete={handleDelete} />
+            < BlogList blogs={blogs} title={"All blogs"} handleDelete={handleDelete} bookmark={bookmark} />
         </div>
     );
 }

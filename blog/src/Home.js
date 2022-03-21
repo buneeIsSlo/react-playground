@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BlogList from "./BlogList";
 
 const Home = () => {
@@ -20,6 +20,10 @@ const Home = () => {
         })
         setBlogs(newColor);
     }
+
+    useEffect(() => {
+        console.log("useEffect ran");
+    })
 
     return (
         <div className="home">

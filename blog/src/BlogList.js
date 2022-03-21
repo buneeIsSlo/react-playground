@@ -1,6 +1,5 @@
 const BlogList = ({ blogs, title, handleDelete, bookmark }) => {
 
-    console.log(title);
 
     return (
         <div className="blog-list">

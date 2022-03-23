@@ -5,6 +5,7 @@ const Home = () => {
     const [blogs, setBlogs] = useState(null)
 
     const [name, setName] = useState("mario");
+    const [isPending, setIsPending] = useState(true);
 
     const handleDelete = (id) => {
         const newBlogs = blogs.filter((blog) => blog.id !== id);
@@ -24,6 +25,7 @@ const Home = () => {
         fetch("http://localhost:8000/blogs")
             .then(resp => resp.json())
             .then(data => {
+                setIsPending(false);
                 setBlogs(data);
                 console.log(data);
             });
@@ -31,6 +33,7 @@ const Home = () => {
 
     return (
         <div className="home">
+            {isPending && <div className="loading">Loading....</div>}
             {blogs && < BlogList blogs={blogs} title={"All blogs"} handleDelete={handleDelete} bookmark={bookmark} />}
         </div>
     );

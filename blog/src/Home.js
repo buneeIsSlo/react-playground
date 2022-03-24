@@ -3,9 +3,8 @@ import BlogList from "./BlogList";
 
 const Home = () => {
     const [blogs, setBlogs] = useState(null)
-
-    const [name, setName] = useState("mario");
     const [isPending, setIsPending] = useState(true);
+    const [error, setError] = useState(null);
 
     const handleDelete = (id) => {
         const newBlogs = blogs.filter((blog) => blog.id !== id);
@@ -23,16 +22,27 @@ const Home = () => {
     useEffect(() => {
         console.log("useEffect ran");
         fetch("http://localhost:8000/blogs")
-            .then(resp => resp.json())
+            .then(resp => {
+                if (!resp.ok)
+                    throw new Error("Could not fetch :(");
+                return resp.json();
+            })
             .then(data => {
                 setIsPending(false);
                 setBlogs(data);
                 console.log(data);
-            });
+                setError(null);
+            })
+            .catch(err => {
+                setIsPending(false);
+                setError(err.message);
+                setBlogs(null);
+            })
     }, []);
 
     return (
         <div className="home">
+            {error && <div className="error">{error}</div>}
             {isPending && <div className="loading">Loading....</div>}
             {blogs && < BlogList blogs={blogs} title={"All blogs"} handleDelete={handleDelete} bookmark={bookmark} />}
         </div>

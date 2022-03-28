@@ -21,7 +21,7 @@ const Home = () => {
 
     useEffect(() => {
         console.log("useEffect ran");
-        fetch("http://localhost:8000/blogs")
+        fetch("http://localhost:8080/blogs")
             .then(resp => {
                 if (!resp.ok)
                     throw new Error("Could not fetch :(");

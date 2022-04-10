@@ -23,6 +23,12 @@
       "body": "fsdsdf",
       "author": "",
       "id": 4
+    },
+    {
+      "title": "Test1",
+      "body": "This is a new test to play with useHistory",
+      "author": "yoshi",
+      "id": 5
     }
   ]
 }

@@ -11,8 +11,6 @@ const BlogList = ({ blogs, title, handleDelete, bookmark }) => {
                     <Link to={`/blog/${blog.id}`}>
                         <h2 className="title">{blog.title}</h2>
                         <p className="author">{blog.author}</p>
-                        <button className="delete" onClick={() => handleDelete(blog.id)}>Delete</button>
-                        <button className="change" onClick={() => bookmark(blog.id)}>Bookmark</button>
                     </Link>
                 </div>
             )}

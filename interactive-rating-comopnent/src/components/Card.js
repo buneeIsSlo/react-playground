@@ -1,4 +1,8 @@
 import images from "../constants/images";
+import "./Card.scss";
+
+const rating = 4;
+const maxRating = 5;
 
 const Card = () => {
     return (
@@ -15,6 +19,21 @@ const Card = () => {
                 </div>
                 <button type="button" className="card__cta">submit</button>
             </div>
+
+            <template className="card__thanks">
+                <div className="card__illustration-wrapper">
+                    <img src={images.illustration} alt="" className="card__ilustration" />
+                </div>
+                <div className="card__rating-result-wrapper">
+                    <div className="card__rating-result">
+                        You selected {rating} out of {maxRating}
+                    </div>
+                </div>
+                <div className="card__thanks-message">
+                    <h2>Thank you!</h2>
+                    <p>We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>
+                </div>
+            </template>
         </div>
     )
 }

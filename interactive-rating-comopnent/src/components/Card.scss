@@ -71,6 +71,31 @@
           margin-top: 24px;
           margin-bottom: 32px;
         }
+
+        .card__rating-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          border-radius: 50%;
+          border: none;
+          outline: none;
+          width: 51px;
+          height: 51px;
+          background-color: var(--dark-blue);
+          color: var(--med-grey);
+          transition: all 0.3s ease-in-out;
+  
+          &:hover {
+            background-color: var(--med-grey);
+            color: #fff;
+          }
+  
+          &.active {
+            background-color: var(--primary-color);
+            color: #fff;
+          }
+        }
       }
     }
   }

@@ -40,7 +40,7 @@ const Card = (
             setRating(num);
     }
 
-    const handleSubmit = () => { setSubmitted(false) };
+    const handleSubmit = () => { setSubmitted(true) };
 
     const ratingArr = [];
     for (let i = 0; i < maxRating; i++) {
@@ -56,7 +56,7 @@ const Card = (
 
     return (
         <div className="card__container">
-            <div className="card__content">
+            <div className={`card__content${submitted ? " back" : ""}`}>
                 <div className="card__rating">
                     <div className="card__icon-wrapper">
                         <img src={images.icon} alt="" className="card__icon" />
@@ -66,22 +66,29 @@ const Card = (
                         <p className="card__description">{description}</p>
                         <div className="card__rating-wrapper">{ratingArr}</div>
                     </div>
-                    <button type="button" className="card__cta">submit</button>
+                    <button
+                        type="button"
+                        className="card__cta"
+                        onClick={handleSubmit}
+                        disabled={!rating}
+                    >
+                        submit
+                    </button>
                 </div>
-                <template className="card__thanks">
+                <div className={`card__thanks${submitted ? " active" : ""}`}>
                     <div className="card__illustration-wrapper">
                         <img src={images.illustration} alt="" className="card__ilustration" />
                     </div>
                     <div className="card__rating-result-wrapper">
                         <div className="card__rating-result">
-                            You selected {ratingArr} out of {content.maxRating}
+                            You selected {rating} out of {content.maxRating}
                         </div>
                     </div>
                     <div className="card__thanks-message">
                         <h2>Thank you!</h2>
                         <p>We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>
                     </div>
-                </template>
+                </div>
             </div>
         </div>
     )

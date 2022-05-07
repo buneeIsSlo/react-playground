@@ -6,7 +6,7 @@
   }
 
   .card__content {
-    transition: transform 0.8s;
+    transition: transform 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
     transform-style: preserve-3d;
     background: radial-gradient(98.96% 98.96% at 50% 0%, #232a34 0%, #181e27 100%);
     width: 100%;
@@ -88,11 +88,20 @@
           color: var(--med-grey);
           transition: all 0.3s ease-in-out;
   
-          &:hover {
+          &:hover,
+          &:focus {
             background-color: var(--med-grey);
             color: #fff;
           }
-  
+          
+          &:focus {
+            outline: 2px dashed #fff;
+          }
+
+          &:focus:not(:focus-visible) {
+            outline: none;
+          }
+
           &.active {
             background-color: var(--primary-color);
             color: #fff;
@@ -116,9 +125,19 @@
         text-transform: uppercase;
         transition: all 0.3s ease-in-out;
   
-        &:hover {
+        &:hover,
+        &:focus {
           background-color: #fff;
           color: var(--primary-color);
+        }
+
+        &:focus {
+          outline: 2px dashed var(--primary-color);
+          outline-offset: 2px;
+        }
+
+        &:focus:not(:focus-visible) {
+          outline: none;
         }
   
         &:disabled {

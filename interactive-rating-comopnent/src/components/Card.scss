@@ -1,8 +1,11 @@
+/* ----- Media queries ----- */
+
 .card__container {
     background-color: transparent;
     width: 400px;
     height: 416px;
     perspective: 1000px;
+    animation: scaleUp .6s cubic-bezier(0.85, 0, 0.15, 1) forwards;
   }
 
   .card__content {
@@ -204,5 +207,50 @@
           line-height: 24px;
         }
       }
+    }
+  }
+
+  /* ----- Media queries ----- */
+
+  @media screen and (max-width: 450px) {
+    .card__container {
+      width: 328px;
+    }
+  
+    .card__content {
+      .card__rating {
+        top: 24px;
+        left: 24px;
+        right: 24px;
+        bottom: 24px;
+      }
+  
+      .card__thanks {
+        top: 24px;
+        left: 24px;
+        right: 24px;
+        bottom: 24px;
+      }
+    }
+  }
+
+
+  @media (prefers-reduced-motion) {
+    .card__container {
+      animation: none;
+    }
+  }
+
+  /* ----- Animations ----- */
+
+  @keyframes scaleUp {
+    from {
+      opacity: 0;
+      transform: scale(.7);
+    }
+    
+    to {
+      opacity: 1;
+      transform: scale(1);
     }
   }

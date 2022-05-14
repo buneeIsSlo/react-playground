@@ -54,12 +54,14 @@ const Card = (
         )
     }
 
+    console.log(ratingArr);
+
     return (
         <div className="card__container">
             <div className={`card__content${submitted ? " back" : ""}`}>
                 <div className="card__rating">
                     <div className="card__icon-wrapper">
-                        <img src={images.icon} alt="" className="card__icon" />
+                        <img src={images.icon} alt="" aria-hidden="true" className="card__icon" />
                     </div>
                     <div className="card__message">
                         <h2 className="card__title">{title}</h2>
@@ -67,7 +69,7 @@ const Card = (
                         <div className="card__rating-wrapper">{ratingArr}</div>
                     </div>
                     <button
-                        type="button"
+                        type="submit"
                         className="card__cta"
                         onClick={handleSubmit}
                         disabled={!rating}
@@ -77,7 +79,7 @@ const Card = (
                 </div>
                 <div className={`card__thanks${submitted ? " active" : ""}`}>
                     <div className="card__illustration-wrapper">
-                        <img src={images.illustration} alt="" className="card__ilustration" />
+                        <img src={images.illustration} alt="mobile phone illustration" className="card__ilustration" />
                     </div>
                     <div className="card__rating-result-wrapper">
                         <div className="card__rating-result">

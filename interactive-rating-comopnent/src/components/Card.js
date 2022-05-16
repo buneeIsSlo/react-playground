@@ -22,8 +22,6 @@ const RatingComponent = ({ num, handler, rating }) => {
     )
 }
 
-
-
 const Card = (
     {
         title = content.title,
@@ -53,8 +51,6 @@ const Card = (
             />
         )
     }
-
-    console.log(ratingArr);
 
     return (
         <div className="card__container">

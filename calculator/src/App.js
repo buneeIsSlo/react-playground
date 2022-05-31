@@ -28,10 +28,19 @@ function App() {
                 }
 
             case ACTIONS.CHOOSE_OPERATION:
-                return {
-                    ...state,
-                    currentOperand: `${state.currentOperand || ""}${payload.operation}`
+                if (state.currentOperand == null && state.previousOperand == null) {
+                    return state;
                 }
+
+                if (state.previousOperand == null) {
+                    return {
+                        ...state,
+                        operation: payload.operation,
+                        previousOperand: state.currentOperand,
+                        currentOperand: null
+                    }
+                }
+
 
             case ACTIONS.CLEAR:
                 return {};

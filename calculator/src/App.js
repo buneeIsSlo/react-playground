@@ -29,7 +29,15 @@ function App() {
 
             case ACTIONS.CHOOSE_OPERATION:
                 if (state.currentOperand == null && state.previousOperand == null) {
+                    console.log(state);
                     return state;
+                }
+
+                if (state.currentOperand == null) {
+                    return {
+                        ...state,
+                        operation: payload.operation
+                    }
                 }
 
                 if (state.previousOperand == null) {
@@ -39,6 +47,13 @@ function App() {
                         previousOperand: state.currentOperand,
                         currentOperand: null
                     }
+                }
+
+                return {
+                    ...state,
+                    previousOperand: evaluate(state),
+                    operation: payload.operation,
+                    currentOperand: null
                 }
 
 
@@ -56,8 +71,46 @@ function App() {
                     currentOperand: state.currentOperand.slice(0, -1),
                 }
 
+            case ACTIONS.EVALUATE:
+                if (state.currentOperand == null || state.previousOperand == null || state.operation == null) {
+                    return state;
+                }
+
+                return {
+                    ...state,
+                    previousOperand: null,
+                    operation: null,
+                    currentOperand: evaluate(state)
+                }
         }
     }
+
+    function evaluate({ currentOperand, previousOperand, operation }) {
+        const prev = parseFloat(previousOperand);
+        const curr = parseFloat(currentOperand);
+
+        if (isNaN(prev) || isNaN(curr)) return "";
+
+        let computation = "";
+
+        switch (operation) {
+            case "+":
+                computation = prev + curr
+                break;
+            case "-":
+                computation = prev - curr
+                break;
+            case "*":
+                computation = prev * curr
+                break;
+            case "÷":
+                computation = prev / curr
+                break;
+        }
+
+        return String(computation);
+    }
+
 
     const [{ currentOperand, previousOperand, operation }, dispatch] = useReducer(reducer, {});
     return (
@@ -83,7 +136,7 @@ function App() {
             <OperationButton operation="-" dispatch={dispatch} />
             <DigitButton digit="." dispatch={dispatch} />
             <DigitButton digit="0" dispatch={dispatch} />
-            <button className="span-two">=</button>
+            <button className="span-two" onClick={() => dispatch({ type: ACTIONS.EVALUATE })}>=</button>
         </div>
     )
 }

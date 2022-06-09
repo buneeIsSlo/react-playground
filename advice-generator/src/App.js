@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import { useState, useEffect } from "react";
 import './App.css';
 
 function App() {
+
+  let [advice, setAdvice] = useState("Placeholder");
+
+  useEffect(() => {
+    fetch("https://api.adviceslip.com/advice").then(response => {
+      return response.json();
+    }).then((slip) => {
+      console.log(slip);
+    })
+  }, [])
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Advice generator</h1>
+      <p className="advice">{advice}</p>
     </div>
   );
 }

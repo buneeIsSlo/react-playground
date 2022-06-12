@@ -3,14 +3,17 @@ import './App.css';
 
 function App() {
 
-  let [advice, setAdvice] = useState("Placeholder");
+  let [advice, setAdvice] = useState("loading...");
 
   useEffect(() => {
-    fetch("https://api.adviceslip.com/advice").then(response => {
-      return response.json();
-    }).then((slip) => {
-      console.log(slip);
-    })
+    fetch("https://api.adviceslip.com/advice")
+      .then(response => {
+        return response.json();
+      }).then((data) => {
+        const newLocal = "slip";
+        console.log(data[newLocal].advice);
+        setAdvice(data[newLocal].advice);
+      })
   }, [])
 
 

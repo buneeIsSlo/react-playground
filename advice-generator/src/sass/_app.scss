@@ -1,0 +1,26 @@
+@use "./utilities/variables" as *;
+
+body {
+    font-family: "Manrope", sans-serif;
+
+    main {
+        display: grid;
+        place-content: center;
+        min-height: 100vh;
+    }
+}
+
+
+.card {
+    background-color: $main-bg;
+    padding: 2rem;
+    max-width: 500px;
+
+    &__advice {
+        color: $text-color;
+    }
+
+    &__divider {
+        display: block;
+    }
+}

@@ -1,0 +1,13 @@
+:root {
+    --light-cyan: hsl(193, 38%, 86%);
+    --neon-green: hsl(150, 100%, 66%);
+    --gray-blue: hsl(217, 19%, 38%);
+    --dark-gray-blue: hsl(217, 19%, 24%);
+    --dark-blue: hsl(218, 23%, 16%);
+}
+
+$main-bg: var(--dark-blue, hsl(218, 23%, 16%));
+$text-color: var(--light-cyan, hsl(193, 38%, 86%));
+$card-bg: var(--dark-gray-blue, hsl(217, 19%, 24%));
+$heading-color: var(--neon-green, hsl(150, 100%, 66%));
+$btn-color: var(--neon-green, hsl(150, 100%, 66%));

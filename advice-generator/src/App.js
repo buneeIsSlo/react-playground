@@ -1,4 +1,5 @@
-import "./_reset.scss";
+import "./sass/main.scss";
+import images from "./constants/images";
 
 import { useState, useEffect } from "react";
 
@@ -19,10 +20,20 @@ function App() {
 
 
   return (
-    <div className="App">
-      <h1>Advice generator</h1>
-      <p className="advice">{advice}</p>
-    </div>
+    <main>
+      <div className="card">
+        <span className="card__id">ID #154</span>
+        <blockquote className="card__advice">{`"${advice}"`}</blockquote>
+        <picture className="card__divider">
+          <source media="(max-width: 599px)" srcSet={images.divMobile} />
+          <source media="(max-width: 600px)" srcSet={images.divDesktop} />
+          <img src={images.divDesktop} alt=""></img>
+        </picture>
+        <button className="card__button">
+          <img src={images.dice} alt="" />
+        </button>
+      </div>
+    </main>
   );
 }
 

@@ -22,8 +22,10 @@ function App() {
   return (
     <main>
       <div className="card">
-        <span className="card__id">ID #154</span>
-        <blockquote className="card__advice">{`"${advice}"`}</blockquote>
+        <span className="card__id">advice #154</span>
+        <div className="card__advice-wrapper">
+          <blockquote className="card__advice">{`"${advice}"`}</blockquote>
+        </div>
         <picture className="card__divider">
           <source media="(max-width: 599px)" srcSet={images.divMobile} />
           <source media="(max-width: 600px)" srcSet={images.divDesktop} />

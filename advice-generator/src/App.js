@@ -3,21 +3,27 @@ import images from "./constants/images";
 
 import { useState, useEffect } from "react";
 
+const API_URL = "https://api.adviceslip.com/advice";
+
 function App() {
 
   let [advice, setAdvice] = useState("loading...");
 
-  useEffect(() => {
-    fetch("https://api.adviceslip.com/advice")
-      .then(response => {
-        return response.json();
-      }).then((data) => {
-        const newLocal = "slip";
-        console.log(data[newLocal].advice);
-        setAdvice(data[newLocal].advice);
-      })
-  }, [])
+  async function requestAdvice() {
+    const resp = await fetch(API_URL, { cache: "no-cache" });
 
+    if (!resp.ok) {
+      throw new Error();
+    }
+    else {
+      const data = await resp.json();
+      setAdvice(data["slip"].advice);
+    }
+  }
+
+  useEffect(() => {
+    requestAdvice();
+  }, []);
 
   return (
     <main>
@@ -31,7 +37,7 @@ function App() {
           <source media="(max-width: 600px)" srcSet={images.divDesktop} />
           <img src={images.divDesktop} alt=""></img>
         </picture>
-        <button className="card__button">
+        <button className="card__button" onClick={requestAdvice}>
           <img src={images.dice} alt="" />
         </button>
       </div>

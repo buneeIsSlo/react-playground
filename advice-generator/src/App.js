@@ -7,17 +7,22 @@ const API_URL = "https://api.adviceslip.com/advice";
 
 function App() {
 
+  let [loading, setLoading] = useState(true);
+  let [id, setId] = useState(154);
   let [advice, setAdvice] = useState("loading...");
 
   async function requestAdvice() {
     const resp = await fetch(API_URL, { cache: "no-cache" });
 
     if (!resp.ok) {
+      setLoading(false);
       throw new Error();
     }
     else {
       const data = await resp.json();
+      setLoading(false);
       setAdvice(data["slip"].advice);
+      setId(data["slip"].id);
     }
   }
 
@@ -28,9 +33,10 @@ function App() {
   return (
     <main>
       <div className="card">
-        <span className="card__id">advice #154</span>
+        <span className="card__id">{`advice #${id}`}</span>
         <div className="card__advice-wrapper">
-          <blockquote className="card__advice">{`"${advice}"`}</blockquote>
+          {loading ? (<img src={images.loader} alt="" />) :
+            (<blockquote className="card__advice">{`"${advice}"`}</blockquote>)}
         </div>
         <picture className="card__divider">
           <source media="(max-width: 599px)" srcSet={images.divMobile} />

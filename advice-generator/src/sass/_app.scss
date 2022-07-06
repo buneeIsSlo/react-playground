@@ -19,7 +19,7 @@ body {
 
 .card {
     background-color: $card-bg;
-    padding: 2.8em;
+    padding: 2em;
     width: 540px;
     max-width: 540px;
     border-radius: 1.5rem;
@@ -29,24 +29,24 @@ body {
 
     &__id {
         text-transform: uppercase;
-        font-size: .8rem;
+        font-size: .6rem;
         letter-spacing: 0.314em;
         color: $heading-color;
     }
 
     &__advice-wrapper {
-        min-height: 9rem;
-        margin: 1.2rem 0;
-        padding: 1.2em 0;
+        min-height: 8rem;
+        margin: .5rem 0;
+        padding: 1em 0;
         display: flex;
         justify-content: center;
         align-items: center;
-        // outline: 2px solid yellow;
     }
 
     &__advice {
         color: $text-color;
-        font-size: 1.7rem;
+        font-size: 1.3rem;
+        animation: fadeIn .8s forwards ease-in-out;
         // outline: 2px solid red;
     }
 
@@ -79,5 +79,33 @@ body {
         &:active img {
             transform: scale(1.1);
         }
+    }
+}
+
+@media (min-width: 600px) {
+    .card {
+        padding: 2.8em;
+        
+        &__id {
+            font-size: .8rem;
+        }
+
+        &__advice-wrapper {
+            min-height: 9rem;
+            margin: 1.2rem 0;
+            padding: 1.2em 0;
+        }
+
+        &__advice {
+            font-size: 1.7rem;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
     }
 }

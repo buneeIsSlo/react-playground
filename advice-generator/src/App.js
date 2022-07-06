@@ -7,11 +7,12 @@ const API_URL = "https://api.adviceslip.com/advice";
 
 function App() {
 
-  let [loading, setLoading] = useState(true);
+  let [loading, setLoading] = useState(false);
   let [id, setId] = useState(154);
   let [advice, setAdvice] = useState("loading...");
 
   async function requestAdvice() {
+    setLoading(true);
     const resp = await fetch(API_URL, { cache: "no-cache" });
 
     if (!resp.ok) {

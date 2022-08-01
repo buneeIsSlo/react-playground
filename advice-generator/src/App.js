@@ -8,8 +8,8 @@ const API_URL = "https://api.adviceslip.com/advice";
 function App() {
 
   let [loading, setLoading] = useState(false);
-  let [id, setId] = useState(154);
-  let [advice, setAdvice] = useState("loading...");
+  let [id, setId] = useState("?");
+  let [advice, setAdvice] = useState(null);
 
   async function requestAdvice() {
     setLoading(true);
@@ -17,6 +17,7 @@ function App() {
 
     if (!resp.ok) {
       setLoading(false);
+      setAdvice("Sorry, can't fetch :( ")
       throw new Error();
     }
     else {
@@ -33,19 +34,20 @@ function App() {
 
   return (
     <main>
+      <h1 style={{ opacity: 0, width: 0 }}>Advice Generator</h1>
       <div className="card">
         <span className="card__id">{`advice #${id}`}</span>
         <div className="card__advice-wrapper">
-          {loading ? (<img src={images.loader} alt="" />) :
+          {loading ? (<img src={images.loader} alt="Loading" />) :
             (<blockquote className="card__advice">{`"${advice}"`}</blockquote>)}
         </div>
-        <picture className="card__divider">
+        <picture className="card__divider" aria-hidden="true">
           <source media="(max-width: 599px)" srcSet={images.divMobile} />
           <source media="(max-width: 600px)" srcSet={images.divDesktop} />
           <img src={images.divDesktop} alt=""></img>
         </picture>
-        <button className="card__button" onClick={requestAdvice}>
-          <img src={images.dice} alt="" />
+        <button className="card__button" onClick={requestAdvice} aria-label="Show Quote">
+          <img src={images.dice} alt="" aria-hidden="true" />
         </button>
       </div>
     </main>

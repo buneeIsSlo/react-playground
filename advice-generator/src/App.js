@@ -41,13 +41,13 @@ function App() {
           {loading ? (<img src={images.loader} alt="Loading" />) :
             (<blockquote className="card__advice">{`"${advice}"`}</blockquote>)}
         </div>
-        <picture className="card__divider" aria-hidden="true">
+        <picture className="card__divider">
           <source media="(max-width: 599px)" srcSet={images.divMobile} />
           <source media="(max-width: 600px)" srcSet={images.divDesktop} />
           <img src={images.divDesktop} alt=""></img>
         </picture>
         <button className="card__button" onClick={requestAdvice} aria-label="Show Quote">
-          <img src={images.dice} alt="" aria-hidden="true" />
+          <img src={images.dice} alt="" />
         </button>
       </div>
     </main>

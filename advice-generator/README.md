@@ -3,7 +3,7 @@
 Hi! This is my solution to the [Advice generator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db). 
 
 ## Links
- - Live Site URL: [Live Site URL here]()
+ - Live Site URL: [Live Site URL here](https://bunee-advice-generator.netlify.app/)
  - Solution URL: [Solution URL here](https://github.com/buneeIsSlo/react-playground/tree/master/advice-generator)
 
 ### Built with

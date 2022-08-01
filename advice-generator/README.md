@@ -2,8 +2,9 @@
 
 Hi! This is my solution to the [Advice generator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db). 
 
-## Live Site URL
- -Todo
+## Links
+ - Live Site URL: [Live Site URL here]()
+ - Solution URL: [Solution URL here](https://github.com/buneeIsSlo/react-playground/tree/master/advice-generator)
 
 ### Built with
 - HTML
@@ -12,14 +13,16 @@ Hi! This is my solution to the [Advice generator app challenge on Frontend Mento
 - Webpack
 
 ### What I learned 
-- CSS 3D transforms
-- Basics of SCSS
-- A better understanding of the `useState()` hook in ReactJS.
+- Using config `{cache: "no-cache"`} in fetch function. The browser looks for a matching request in its HTTP cache.
+- Use cases for the `useEffect()` hook.
+- The `@use` rule in SCSS
+
 
 ### Resources
-- [React Docs](https://reactjs.org/docs/getting-started.html)
-- [Intro to CSS 3D transforms](https://3dtransforms.desandro.com/)
-- [Video tutorial on  SCSS](https://www.youtube.com/watch?v=Zz6eOVaaelI)
+- [DOCS: React Docs](https://reactjs.org/docs/getting-started.html)
+- [VIDEO: React Fetch API Data](https://www.youtube.com/watch?v=o5CdCETh8cQ)
+- [LINK: SVG spinners](https://github.com/n3r4zzurr0/svg-spinners)
+
 
 ### Acknowledgement
-1. Thanks to this [solution](https://github.com/asi309/ratings-card-react-component), I've gained a better understanding of ReactJS and SCSS.
+1. Thanks to this [solution](https://github.com/gerichilli/frontendmentor.io/tree/main/02%20Advice%20generator%20app%20challenge%20hub), I was able to create my solution effortlessly.

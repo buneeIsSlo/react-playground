@@ -1,8 +1,14 @@
 import './App.css';
+import "./sass/app.scss";
+import images from "./constants/images";
+import HamburgerMenu from './components';
 
 function App() {
   return (
-    <h1>Hi, I'm bunee</h1>
+    <header className="header flex">
+      <img src={images.logo} alt="" className="header__logo" />
+      <HamburgerMenu />
+    </header>
   );
 }
 

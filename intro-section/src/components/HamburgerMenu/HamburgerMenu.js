@@ -1,12 +1,19 @@
 import "./style.scss";
 import images from "../../constants/images";
 
-const HamburgerMenu = () => {
+const HamburgerButton = () => {
     return (
-        <button className="test">
+        <button className="hamburger">
             <img src={images.menuIcon} alt="" />
         </button>
     )
 }
+
+function HamburgerMenu() {
+    return (
+        < HamburgerButton />
+    )
+}
+
 
 export default HamburgerMenu;

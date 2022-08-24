@@ -1,5 +1,12 @@
 .flex {
     display: flex;
+}
+
+.center {
     justify-content: space-between;
     align-items: center;
+}
+
+.no-underline {
+    text-decoration: none;
 }

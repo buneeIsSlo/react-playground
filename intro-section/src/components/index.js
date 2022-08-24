@@ -1,4 +1,4 @@
 import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
-import CTA from "./CTA/CTA";
+import Intro from "./Intro/Intro";
 
-export { HamburgerMenu, CTA };
+export { HamburgerMenu, Intro };

@@ -1,0 +1,49 @@
+@use "../../sass/app.scss";
+
+.intro {
+    padding: .4em;
+    margin-top: 1.2rem;
+    // outline: 2px solid purple;
+
+    &__heading {
+        font-size: var(--fs-800);
+        font-weight: var(--fw-700);
+        // line-height: 1em;
+        text-align: center;
+    }
+
+    &__info {
+        font-size: var(--fs-300);
+        text-align: center;
+        color: var(--clr-gray);
+        margin: .5rem auto;
+    }
+
+    &__cta {
+        font-size: var(--fs-200);
+        font-weight: var(--fw-700);
+        color: var(--clr-white);
+        display: block;
+        width: 40%;
+        max-width: 150px;
+        text-align: center;
+        padding: .8em .6em;
+        margin: 1.2rem auto;
+        border-radius: 12px;
+        background-color: var(--clr-black);
+    }
+
+    &__cta:hover {
+        color: var(--clr-black);
+        background-color: transparent;
+        outline: 2px solid var(--clr-link);
+    }
+}
+
+.clients {
+    margin: 1.5rem auto;
+}
+
+.clients li {
+    width: 60px;    
+}

@@ -6,6 +6,8 @@ import audiophlie from "../assets/client-audiophile.svg";
 import databiz from "../assets/client-databiz.svg";
 import maker from "../assets/client-maker.svg";
 import meet from "../assets/client-meet.svg";
+import caret from "../assets/icon-arrow-down.svg";
+import calendar from "../assets/icon-calendar.svg"
 
 
 const images = {
@@ -16,7 +18,9 @@ const images = {
     audiophlie: audiophlie,
     databiz: databiz,
     maker: maker,
-    meet: meet
+    meet: meet,
+    caret: caret,
+    calendar: calendar
 }
 
 export default images;

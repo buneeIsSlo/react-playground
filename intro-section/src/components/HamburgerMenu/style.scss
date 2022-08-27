@@ -1,10 +1,16 @@
 /* ----- Hamburger Menu ----- */
 
 .hamburger {
-    padding: 0 .15rem;
-    width: 40px;
-    height: 30px;
-    background-color: transparent;
-    outline: 0;
-    border: none;
+  padding: 0 0.15rem;
+  width: 40px;
+  height: 30px;
+  background-color: transparent;
+  outline: 0;
+  border: none;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  background-color: #eee;
 }

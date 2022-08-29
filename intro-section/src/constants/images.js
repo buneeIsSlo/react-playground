@@ -7,7 +7,7 @@ import databiz from "../assets/client-databiz.svg";
 import maker from "../assets/client-maker.svg";
 import meet from "../assets/client-meet.svg";
 import caret from "../assets/icon-arrow-down.svg";
-import calendar from "../assets/icon-calendar.svg"
+import calendar from "../assets/icon-calendar.svg";
 
 
 const images = {

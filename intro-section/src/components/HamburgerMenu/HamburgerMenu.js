@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./style.scss";
 import images from "../../constants/images";
 import { Features } from "../../constants/data";
@@ -11,22 +12,28 @@ const HamburgerButton = () => {
 }
 
 function HamburgerMenu() {
+
+    const [menu, setMenu] = useState(false);
+
     return (
         <>
             < HamburgerButton />
             <nav className="nav">
                 <div className="menu__link">
-                    <button className="flex center">
+                    <button
+                        className="flex center"
+                        onClick={() => setMenu(!menu)}
+                    >
                         <span>Features</span>
                         <img src={images.caret} alt="caret" />
                     </button>
-                    <ul>
+                    <ul className={menu ? "" : "hidden"}>
                         {
                             Features.map((item, index) => {
                                 return (
                                     <li key={index} className="flex center">
                                         <img src={item.icon} alt="calendar" />
-                                        <a href={item.path} className={`${item.cName} no-underline`}>Yo test</a>
+                                        <a href={item.path} className={`${item.cName} no-underline`}>{item.text}</a>
                                     </li>
                                 );
                             })

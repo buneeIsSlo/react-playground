@@ -4,7 +4,26 @@ const Features = [
     {
         icon: images.calendar,
         path: "/calendar",
-        cName: "sub-link"
+        cName: "",
+        text: "Yo, test"
+    },
+    {
+        icon: images.calendar,
+        path: "/calendar",
+        cName: "",
+        text: "Yo, test"
+    },
+    {
+        icon: images.calendar,
+        path: "/calendar",
+        cName: "",
+        text: "Yo, test"
+    },
+    {
+        icon: images.calendar,
+        path: "/calendar",
+        cName: "",
+        text: "Yo, test"
     }
 ]
 

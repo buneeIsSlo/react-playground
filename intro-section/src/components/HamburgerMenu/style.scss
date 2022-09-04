@@ -12,9 +12,9 @@
 .nav {
   position: fixed;
   top: 0;
+  right: 0;
   background-color: #eee;
+  width: 200px;
+  padding: 2rem .5em;
 }
 
-.hidden {
-  display: none;
-}

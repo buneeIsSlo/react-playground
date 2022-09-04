@@ -8,6 +8,9 @@ import maker from "../assets/client-maker.svg";
 import meet from "../assets/client-meet.svg";
 import caret from "../assets/icon-arrow-down.svg";
 import calendar from "../assets/icon-calendar.svg";
+import todo from "../assets/icon-todo.svg";
+import reminders from "../assets/icon-reminders.svg";
+import planning from "../assets/icon-planning.svg";
 
 
 const images = {
@@ -20,7 +23,10 @@ const images = {
     maker: maker,
     meet: meet,
     caret: caret,
-    calendar: calendar
+    calendar: calendar,
+    todo: todo,
+    reminders: reminders,
+    planning: planning
 }
 
 export default images;

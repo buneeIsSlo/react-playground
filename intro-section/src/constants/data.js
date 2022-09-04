@@ -1,30 +1,52 @@
 import images from "../constants/images";
 
-const Features = [
+const dropdownData = [
     {
-        icon: images.calendar,
-        path: "/calendar",
-        cName: "",
-        text: "Yo, test"
+        title: "Features",
+        items: [
+            {
+                icon: images.todo,
+                path: "/todo",
+                cName: "",
+                text: "Todo List"
+            },
+            {
+                icon: images.calendar,
+                path: "/calendar",
+                cName: "",
+                text: "Calendar"
+            },
+            {
+                icon: images.reminders,
+                path: "/reminders",
+                cName: "",
+                text: "Reminders"
+            },
+            {
+                icon: images.planning,
+                path: "/planning",
+                cName: "",
+                text: "Planning"
+            }
+        ]
     },
     {
-        icon: images.calendar,
-        path: "/calendar",
-        cName: "",
-        text: "Yo, test"
+        title: "Company",
+        items: [
+            {
+                icon: images.todo,
+                path: "/todo",
+                cName: "",
+                text: "Todo List"
+            },
+            {
+                icon: images.calendar,
+                path: "/calendar",
+                cName: "",
+                text: "Calendar"
+            },
+        ]
     },
-    {
-        icon: images.calendar,
-        path: "/calendar",
-        cName: "",
-        text: "Yo, test"
-    },
-    {
-        icon: images.calendar,
-        path: "/calendar",
-        cName: "",
-        text: "Yo, test"
-    }
 ]
 
-export { Features };
+export { Features, dropdownData };

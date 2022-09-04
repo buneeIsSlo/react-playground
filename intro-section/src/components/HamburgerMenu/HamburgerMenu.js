@@ -1,7 +1,7 @@
-import { useState } from "react";
 import "./style.scss";
 import images from "../../constants/images";
-import { Features } from "../../constants/data";
+import { dropdownData } from "../../constants/data";
+import Dropdown from "../Dropdown/Dropdown.js";
 
 const HamburgerButton = () => {
     return (
@@ -13,33 +13,17 @@ const HamburgerButton = () => {
 
 function HamburgerMenu() {
 
-    const [menu, setMenu] = useState(false);
-
     return (
         <>
             < HamburgerButton />
             <nav className="nav">
-                <div className="menu__link">
-                    <button
-                        className="flex center"
-                        onClick={() => setMenu(!menu)}
-                    >
-                        <span>Features</span>
-                        <img src={images.caret} alt="caret" />
-                    </button>
-                    <ul className={menu ? "" : "hidden"}>
-                        {
-                            Features.map((item, index) => {
-                                return (
-                                    <li key={index} className="flex center">
-                                        <img src={item.icon} alt="calendar" />
-                                        <a href={item.path} className={`${item.cName} no-underline`}>{item.text}</a>
-                                    </li>
-                                );
-                            })
-                        }
-                    </ul>
-                </div>
+                {
+                    dropdownData.map((data) => {
+                        return (
+                            <Dropdown title={data.title} items={data.items} key={data.title} />
+                        );
+                    })
+                }
             </nav>
         </>
     )

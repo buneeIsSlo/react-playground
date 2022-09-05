@@ -8,25 +8,25 @@ const dropdownData = [
                 icon: images.todo,
                 path: "/todo",
                 cName: "",
-                text: "Todo List"
+                name: "Todo List"
             },
             {
                 icon: images.calendar,
                 path: "/calendar",
                 cName: "",
-                text: "Calendar"
+                name: "Calendar"
             },
             {
                 icon: images.reminders,
                 path: "/reminders",
                 cName: "",
-                text: "Reminders"
+                name: "Reminders"
             },
             {
                 icon: images.planning,
                 path: "/planning",
                 cName: "",
-                text: "Planning"
+                name: "Planning"
             }
         ]
     },
@@ -34,19 +34,22 @@ const dropdownData = [
         title: "Company",
         items: [
             {
-                icon: images.todo,
-                path: "/todo",
+                path: "/history",
                 cName: "",
-                text: "Todo List"
+                name: "History"
             },
             {
-                icon: images.calendar,
-                path: "/calendar",
+                path: "/team",
                 cName: "",
-                text: "Calendar"
+                name: "Our Team"
             },
+            {
+                path: "/blog",
+                cName: "",
+                name: "Blog"
+            }
         ]
     },
 ]
 
-export { Features, dropdownData };
+export { dropdownData };

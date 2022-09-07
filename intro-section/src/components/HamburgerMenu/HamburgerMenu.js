@@ -17,13 +17,21 @@ function HamburgerMenu() {
         <>
             < HamburgerButton />
             <nav className="nav">
-                {
-                    dropdownData.map((data) => {
-                        return (
-                            <Dropdown title={data.title} items={data.items} key={data.title} />
-                        );
-                    })
-                }
+                <ul className="nav__list">
+                    {
+                        dropdownData.map((data) => {
+                            return (
+                                <Dropdown title={data.title} items={data.items} key={data.title} />
+                            );
+                        })
+                    }
+                    <li className="nav__list-item">
+                        <a href="/careers" className="link">Careers</a>
+                    </li>
+                    <li className="nav__list-item">
+                        <a href="/about" className="link">About</a>
+                    </li>
+                </ul>
             </nav>
         </>
     )

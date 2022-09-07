@@ -10,3 +10,16 @@
 .no-underline {
     text-decoration: none;
 }
+
+.link {
+    color: var(--clr-link);
+    text-decoration: none !important;
+
+    &:hover {
+        color: var(--hov-link);
+    }
+}
+
+.hidden {
+    display: none;
+}

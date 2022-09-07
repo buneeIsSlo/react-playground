@@ -1,0 +1,31 @@
+.dropdown {
+    outline: 2px solid green;
+    
+    &__button {
+        border: none;
+        outline: 2px solid black;
+        width: 55%;
+        color: var(--clr-link);
+
+        &:hover {
+            color: var(--hov-link);
+        }
+    }
+
+
+    &__menu {
+        // outline: 2px solid red;
+        max-width: 80%;
+        margin-left: 1rem;
+        padding: .2em .4em;
+
+        &-item {
+            padding: .5em 0;
+        }
+
+        &-link {
+            gap: .8em;
+            align-items: center;
+        }
+    }   
+}

@@ -1,14 +1,23 @@
 .dropdown {
-    outline: 2px solid green;
     
     &__button {
         border: none;
-        outline: 2px solid black;
         width: 55%;
         color: var(--clr-link);
+        background-color: transparent;
 
         &:hover {
             color: var(--hov-link);
+            cursor: pointer;
+        }
+
+        &-icon {
+            transition: all .2s ease-out;
+        }
+
+        &:hover &-icon{
+            filter: brightness(0%);
+            transform: translateY(3px);
         }
     }
 

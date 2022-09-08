@@ -22,3 +22,13 @@
     --fw-500: 500;
     --fw-700: 700;
 }
+
+@keyframes rotateIcon {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
+}

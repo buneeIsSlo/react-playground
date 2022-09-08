@@ -10,18 +10,18 @@
 }
 
 .nav {
+  font-size: var(--fs-200);
   position: fixed;
   top: 0;
   right: 0;
-  background-color: #eee;
-  width: 200px;
-  padding: 2rem .5em;
+  padding: 2rem 1.5rem;
+  width: 65%;
+  max-width: 245px;
+  height: 100vh;
+  background-color: var(--clr-white);
+  gap: 1.2rem;
 
-  // &__item {
-  //   color: var(--clr-link);
-
-  //   &:hover {
-  //     color: var(--clr-link);
-  //   }
-  // }
+  &__list-item {
+    margin: .8em 0;
+  }
 }

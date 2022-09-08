@@ -7,8 +7,8 @@
     align-items: center;
 }
 
-.no-underline {
-    text-decoration: none;
+.col {
+    flex-direction: column;
 }
 
 .link {
@@ -22,4 +22,26 @@
 
 .hidden {
     display: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.register {
+    color: var(--clr-link);
+    padding: .4em 1em;
+    width: 100%;
+    outline: 2px solid var(--clr-black);
+    text-decoration: none;
+    border-radius: .6em;
+
+    &:hover {
+        color: #fff;
+        background-color: var(--clr-black);
+    }
+}
+
+.rotate-icon {
+    animation: .2s rotateIcon forwards ease-in-out;
 }

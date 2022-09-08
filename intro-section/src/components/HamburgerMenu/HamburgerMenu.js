@@ -16,7 +16,7 @@ function HamburgerMenu() {
     return (
         <>
             < HamburgerButton />
-            <nav className="nav">
+            <nav className="nav flex col">
                 <ul className="nav__list">
                     {
                         dropdownData.map((data) => {
@@ -30,6 +30,14 @@ function HamburgerMenu() {
                     </li>
                     <li className="nav__list-item">
                         <a href="/about" className="link">About</a>
+                    </li>
+                </ul>
+                <ul className="nav__list flex col">
+                    <li className="nav__list-item text-center">
+                        <a href="/login" className="link">Login</a>
+                    </li>
+                    <li className="nav__list-item flex text-center">
+                        <a href="/register" className="register">Register</a>
                     </li>
                 </ul>
             </nav>

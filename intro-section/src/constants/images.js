@@ -6,7 +6,7 @@ import audiophlie from "../assets/client-audiophile.svg";
 import databiz from "../assets/client-databiz.svg";
 import maker from "../assets/client-maker.svg";
 import meet from "../assets/client-meet.svg";
-import caret from "../assets/icon-arrow-down.svg";
+import caret from "../assets/icon-arrow-up.svg";
 import calendar from "../assets/icon-calendar.svg";
 import todo from "../assets/icon-todo.svg";
 import reminders from "../assets/icon-reminders.svg";

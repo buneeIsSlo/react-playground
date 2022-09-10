@@ -7,6 +7,8 @@
   background-color: transparent;
   outline: 0;
   border: none;
+  z-index: 100;
+  animation: .8s cross forwards ease-in-out;
 }
 
 .nav {
@@ -14,14 +16,37 @@
   position: fixed;
   top: 0;
   right: 0;
+  transform: translateX(250px);
   padding: 2rem 1.5rem;
   width: 65%;
   max-width: 245px;
   height: 100vh;
   background-color: var(--clr-white);
   gap: 1.2rem;
+  transition: transform .3s cubic-bezier(0.76, 0.03, 0.02, 0.86);
 
   &__list-item {
     margin: .8em 0;
+  }
+
+}
+
+.nav--enter {
+  transform: translateX(0%);
+}
+
+.nav--exit {
+  transform: translateX(100%);
+}
+
+@keyframes cross {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.2);
   }
 }

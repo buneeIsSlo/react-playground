@@ -12,13 +12,13 @@ function Dropdown({ title, items }) {
                 onClick={() => { setMenu(!menu) }}
             >
                 <span className="dropdown__button-title">{title}</span>
-                <img className={`dropdown__button-icon ${menu ? "rotate-icon" : ""}`}
+                <img className={`dropdown__button-icon${menu ? "" : " rotate-icon"}`}
                     src={images.caret}
                     alt=""
                     role="presentation"
                 />
             </button>
-            <ul className={`dropdown__menu ${menu ? "hidden" : ""}`}>
+            <ul className={`dropdown__menu${menu ? " hidden" : ""}`}>
                 {
                     items.map((item, index) => {
                         return (

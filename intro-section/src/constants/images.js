@@ -1,5 +1,6 @@
 import logo from "../assets/logo.svg";
 import menu from "../assets/icon-menu.svg";
+import close from "../assets/icon-close-menu.svg";
 import heroMobile from "../assets/image-hero-mobile.png";
 import heroDesktop from "../assets/image-hero-desktop.png";
 import audiophlie from "../assets/client-audiophile.svg";
@@ -16,6 +17,7 @@ import planning from "../assets/icon-planning.svg";
 const images = {
     logo: logo,
     menuIcon: menu,
+    closeIcon: close,
     heroDesktop: heroDesktop,
     heroMobile: heroMobile,
     audiophlie: audiophlie,
@@ -26,7 +28,7 @@ const images = {
     calendar: calendar,
     todo: todo,
     reminders: reminders,
-    planning: planning
+    planning: planning,
 }
 
 export default images;

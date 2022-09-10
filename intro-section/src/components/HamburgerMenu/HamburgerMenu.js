@@ -1,22 +1,18 @@
 import "./style.scss";
+import { useState } from "react";
 import images from "../../constants/images";
 import { dropdownData } from "../../constants/data";
 import Dropdown from "../Dropdown/Dropdown.js";
 
-const HamburgerButton = () => {
-    return (
-        <button className="hamburger">
-            <img src={images.menuIcon} alt="" />
-        </button>
-    )
-}
-
 function HamburgerMenu() {
+    let [navHidden, setNavHidden] = useState(true);
 
     return (
         <>
-            < HamburgerButton />
-            <nav className="nav flex col">
+            <button className="hamburger" onClick={() => setNavHidden(!navHidden)}>
+                <img src={navHidden ? images.menuIcon : images.closeIcon} alt="" />
+            </button>
+            <nav className={`nav flex col${navHidden ? " nav--exit" : " nav--enter"}`}>
                 <ul className="nav__list">
                     {
                         dropdownData.map((data) => {

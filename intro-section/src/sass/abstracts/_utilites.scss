@@ -45,3 +45,11 @@
 .rotate-icon {
     animation: .2s rotateIcon forwards ease-in-out;
 }
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: black;
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
+}

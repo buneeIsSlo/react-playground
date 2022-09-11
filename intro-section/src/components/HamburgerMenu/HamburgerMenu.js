@@ -6,12 +6,24 @@ import Dropdown from "../Dropdown/Dropdown.js";
 
 function HamburgerMenu() {
     let [navHidden, setNavHidden] = useState(true);
+    const overlay = bool => {
+        if (bool) {
+            return <div className="overlay" style={{ "opacity": .4 }} aria-hidden={true}></div>;
+        }
+        else {
+            return <div className="overlay" style={{ "opacity": 0 }} aria-hidden={true}></div>;
+        }
+    }
 
     return (
         <>
-            <button className="hamburger" onClick={() => setNavHidden(!navHidden)}>
+            <button
+                className="hamburger" onClick={() => setNavHidden(!navHidden)}>
                 <img src={navHidden ? images.menuIcon : images.closeIcon} alt="" />
             </button>
+
+            {overlay(!navHidden)}
+
             <nav className={`nav flex col${navHidden ? " nav--exit" : " nav--enter"}`}>
                 <ul className="nav__list">
                     {

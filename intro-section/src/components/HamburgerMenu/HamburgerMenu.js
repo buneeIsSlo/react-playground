@@ -6,11 +6,15 @@ import Dropdown from "../Dropdown/Dropdown.js";
 
 function HamburgerMenu() {
     let [navHidden, setNavHidden] = useState(true);
+
     const overlay = bool => {
+        const body = document.querySelector("body");
         if (bool) {
+            body.style.overflow = "hidden";
             return <div className="overlay" style={{ "opacity": .4 }} aria-hidden={true}></div>;
         }
         else {
+            body.style.overflow = "auto";
             return <div className="overlay" style={{ "opacity": 0 }} aria-hidden={true}></div>;
         }
     }

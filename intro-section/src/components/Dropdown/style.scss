@@ -27,14 +27,36 @@
         max-width: 80%;
         margin-left: 1rem;
         padding: .2em .4em;
-
+        
         &-item {
             padding: .5em 0;
+            transition: margin-left 3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            animation: del .4s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
+        
+        // @for $i from 1 to 4 {
+        //     &-item#{$i} {
+        //     //   font-size: nth($font-size, $i);
+        //       animation-delay: calc($i / 10);
+        //     }
+        //   }
 
         &-link {
             gap: .8em;
             align-items: center;
         }
     }   
+}
+
+
+@keyframes del {
+    from {
+        opacity: .8;
+        transform: translateX(-1rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }

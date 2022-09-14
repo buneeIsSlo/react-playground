@@ -8,7 +8,6 @@
   outline: 0;
   border: none;
   z-index: 100;
-  animation: .8s cross forwards ease-in-out;
 }
 
 .nav {
@@ -23,12 +22,11 @@
   height: 100vh;
   background-color: var(--clr-white);
   gap: 1.2rem;
-  transition: transform .3s cubic-bezier(0.76, 0.03, 0.02, 0.86);
+  transition: transform 0.3s cubic-bezier(0.76, 0.03, 0.02, 0.86);
 
   &__list-item {
     margin: .8em 0;
   }
-
 }
 
 .nav--enter {

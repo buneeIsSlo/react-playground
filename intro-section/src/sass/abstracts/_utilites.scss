@@ -43,7 +43,7 @@
 }
 
 .rotate-icon {
-    animation: .2s rotateIcon forwards ease-in-out;
+    transform: rotate(180deg) !important;
 }
 
 .overlay {

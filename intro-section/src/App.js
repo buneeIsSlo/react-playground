@@ -12,8 +12,8 @@ function App() {
       </header>
       <article className="hero">
         <picture>
-          <source media="(max-width: 599px)" srcSet={images.heroMobile} />
-          <source media="(max-width: 600px)" srcSet={images.heroDesktop} />
+          <source media="(max-width: 768px)" srcSet={images.heroMobile} />
+          <source media="(max-width: 1024px)" srcSet={images.heroDesktop} />
           <img src={images.heroDesktop} alt="" className="hero__img" />
         </picture>
         <Intro />

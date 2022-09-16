@@ -1,4 +1,4 @@
-@use "../../sass/app.scss";
+@import "../../sass/app.scss";
 
 .intro {
     padding: .4em;
@@ -38,6 +38,18 @@
         background-color: transparent;
         outline: 2px solid var(--clr-link);
     }
+
+}
+
+@include breakpoint(Tablet) {
+
+    .intro {
+
+        &__heading {
+            font-size: var(--fs-900);
+        }
+    }
+
 }
 
 .clients {
@@ -45,5 +57,5 @@
 }
 
 .clients li {
-    width: 60px;    
+    width: 60px;
 }

@@ -1,4 +1,5 @@
 @use "../base/variables";
+@use "../abstracts/mixins";
 
 body {
     font-family: var(--ff);
@@ -16,13 +17,28 @@ body {
 
     .hero {
         margin: .5em auto;
-        max-width: 580px;
-
-        &__img {
-            max-width: 400px;
-            margin: 0 auto;
-        }
+        max-width: 570px;
+        outline: 2px solid red;
     }
 
-    
+}
+
+
+@include breakpoint(Desktop) {
+    body {
+
+        .hero {
+            margin: 2.4rem auto;
+            max-width: 80%;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            gap: 1rem;
+
+            &__img {
+                outline: 2px solid green;
+                max-height: 99vh;
+            }
+        }
+    }
 }

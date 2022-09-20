@@ -15,7 +15,7 @@ function HamburgerMenu() {
         }
         else {
             body.style.overflow = "auto";
-            return <div className="overlay" style={{ "opacity": 0 }} aria-hidden={true}></div>;
+            return;
         }
     }
 

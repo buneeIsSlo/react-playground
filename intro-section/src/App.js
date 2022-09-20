@@ -11,11 +11,13 @@ function App() {
         <HamburgerMenu />
       </header>
       <article className="hero">
-        <picture>
-          <source media="(max-width: 930px)" srcSet={images.heroMobile} />
-          <source media="(max-width: 932px)" srcSet={images.heroDesktop} />
-          <img src={images.heroDesktop} alt="" className="hero__img" />
-        </picture>
+        <div className="hero__img-container">
+          <picture>
+            <source media="(max-width: 930px)" srcSet={images.heroMobile} />
+            <source media="(max-width: 932px)" srcSet={images.heroDesktop} />
+            <img src={images.heroDesktop} alt="" className="hero__img" />
+          </picture>
+        </div>
         <Intro />
       </article>
     </>

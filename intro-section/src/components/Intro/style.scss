@@ -7,6 +7,7 @@
 
     &__heading {
         font-size: var(--fs-800);
+        font-size: var(--fs-h);
         font-weight: var(--fw-700);
         // line-height: 1em;
         text-align: center;
@@ -44,9 +45,15 @@
 @include breakpoint(Tablet) {
 
     .intro {
+        width: 40%;
 
         &__heading {
-            font-size: var(--fs-900);
+            font-size: var(--fs-h);
+            text-align: left;
+        }
+
+        &__info {
+            text-align: left;
         }
     }
 

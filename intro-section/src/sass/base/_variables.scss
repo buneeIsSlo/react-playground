@@ -19,6 +19,8 @@
     --fs-800: 2rem;
     --fs-900: 2.25rem;
 
+    --fs-h: clamp(2.5rem, calc(1.2rem + 4.5vw) , 4rem);
+
     --fw-500: 500;
     --fw-700: 700;
 }

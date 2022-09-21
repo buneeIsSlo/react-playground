@@ -10,16 +10,18 @@ function App() {
         <img src={images.logo} alt="" className="header__logo" />
         <HamburgerMenu />
       </header>
-      <article className="hero">
-        <div className="hero__img-container">
-          <picture>
-            <source media="(max-width: 930px)" srcSet={images.heroMobile} />
-            <source media="(max-width: 932px)" srcSet={images.heroDesktop} />
-            <img src={images.heroDesktop} alt="" className="hero__img" />
-          </picture>
-        </div>
-        <Intro />
-      </article>
+      <section className="container">
+        <article className="hero">
+          <div className="hero__img-container">
+            <picture>
+              <source media="(max-width: 930px)" srcSet={images.heroMobile} />
+              <source media="(max-width: 932px)" srcSet={images.heroDesktop} />
+              <img src={images.heroDesktop} alt="" className="hero__img" />
+            </picture>
+          </div>
+          <Intro />
+        </article>
+      </section>
     </>
   );
 }

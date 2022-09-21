@@ -20,7 +20,7 @@ function Intro() {
                 Get your team in sync, no matter your location. Streamline processes,
                 create team rituals, and watch productivity soar.
             </p>
-            <a href="/link" className="intro__cta no-underline">Learn more</a>
+            <a href="/link" className="intro__cta">Learn more</a>
             <Clients />
         </section>
     )

@@ -7,7 +7,7 @@
 
     &__heading {
         font-size: var(--fs-800);
-        font-size: var(--fs-h);
+        // font-size: var(--fs-h);
         font-weight: var(--fw-700);
         // line-height: 1em;
         text-align: center;
@@ -32,6 +32,7 @@
         margin: 1.2rem auto;
         border-radius: 12px;
         background-color: var(--clr-black);
+        text-decoration: none;
     }
 
     &__cta:hover {
@@ -46,6 +47,7 @@
 
     .intro {
         width: 40%;
+        outline: 2px solid blue;
 
         &__heading {
             font-size: var(--fs-h);
@@ -54,6 +56,10 @@
 
         &__info {
             text-align: left;
+        }
+
+        &__cta {
+            margin: 1.2rem 0;
         }
     }
 

@@ -28,7 +28,7 @@ function HamburgerMenu() {
 
             {overlay(!navHidden)}
 
-            <nav className={`nav flex col${navHidden ? " nav--exit" : " nav--enter"}`}>
+            <nav className={`nav flex ${navHidden ? " nav--ext" : " nav--enter"}`}>
                 <ul className="nav__list">
                     {
                         dropdownData.map((data) => {

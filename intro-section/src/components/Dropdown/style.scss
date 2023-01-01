@@ -37,6 +37,30 @@
   }
 }
 
+.dropdown {
+ position: relative;
+
+  &__button {
+    position: relative;
+  }
+
+  &__menu {
+    position: absolute;
+    left: 0;
+    outline: 2px solid black;
+    max-width: none;
+    // width: 150px;
+    margin: 0;
+    padding: 0;
+    // display: grid;
+    // place-content: center;
+
+    &-item {
+      outline: 2px solid red;
+    }
+  }
+}
+
 @keyframes translateDown {
   from {
     opacity: 0.5;

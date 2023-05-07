@@ -11,7 +11,11 @@ module.exports = {
           "grey": "hsl(231, 7%, 65%)",
           "light-grey": "hsl(207, 33%, 95%)"
         }
-      }
+      },
+      fontFamily: {
+        "barlow": ["Barlow", "sans-serif"],
+        "barlow-condensed": ["'Barlow Condensed'", "sans-serif"],
+      },
     },
   },
   plugins: [],

@@ -1,9 +1,13 @@
 import Intro from "./Intro"
+import Nav from "./Nav"
 
 function App() {
 
   return (
-    <Intro />
+    <>
+      <Nav />
+      <Intro />
+    </>
   )
 }
 

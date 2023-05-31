@@ -5,12 +5,15 @@ export default function Nav() {
 
   return (
     <header className="app__header px-9 h-20 w-full lg:h-32 absolute top-0 left-0 flex justify-between items-center lg:px-[8%]  z-10">
-      <a href="#" className="app__logo">
+      <a
+        href="#"
+        className="focus-visible:outline-2 focus-visible:outline-brand-tomato"
+      >
         <img className="scale-[0.8]" src="/public/images/logo.svg" alt="" />
       </a>
       <div className="">
         <button
-          className="p-2 lg:hidden"
+          className="p-2 lg:hidden focus-visible:outline-2 focus-visible:outline-brand-tomato"
           onClick={() => setNavHidden(!navHidden)}
         >
           {navHidden && (
@@ -23,13 +26,13 @@ export default function Nav() {
         <nav
           className={`${
             navHidden ? "hidden " : ""
-          } bg-white w-[80%] mx-9 rounded absolute top-24 left-0 shadow-2xl lg:w-full lg:relative lg:top-0 lg:block lg:bg-transparent lg:shadow-none`}
+          } bg-white w-[80%] mx-9 rounded absolute top-24 left-[50%] translate-x-[-60%] shadow-2xl md:translate-x-[-55%] lg:w-full lg:relative lg:top-0 lg:left-0 lg:translate-x-0 lg:block lg:bg-transparent lg:shadow-none`}
         >
           <ul className="flex flex-col top-0 left-0 lg:flex-row lg:gap-10">
             <li className="w-[60%] mx-auto mt-4 lg:mt-0">
               <a
                 href="#"
-                className="uppercase block text-lg font-barlow-condensed font-bold text-brand-maritime-blue text-center hover:underline"
+                className="uppercase block text-lg font-barlow-condensed font-bold text-brand-maritime-blue text-center hover:underline focus-visible:outline-2 focus-visible:outline-brand-tomato"
               >
                 product
               </a>
@@ -37,7 +40,7 @@ export default function Nav() {
             <li className="w-[60%] mx-auto mt-4 lg:mt-0">
               <a
                 href="#"
-                className="uppercase block text-lg font-barlow-condensed font-bold text-brand-maritime-blue text-center hover:underline"
+                className="uppercase block text-lg font-barlow-condensed font-bold text-brand-maritime-blue text-center hover:underline focus-visible:outline-2 focus-visible:outline-brand-tomato"
               >
                 features
               </a>
@@ -45,7 +48,7 @@ export default function Nav() {
             <li className="w-[60%] mx-auto mt-4 lg:mt-0">
               <a
                 href="#"
-                className="uppercase block text-lg font-barlow-condensed font-bold text-brand-maritime-blue text-center hover:underline"
+                className="uppercase block text-lg font-barlow-condensed font-bold text-brand-maritime-blue text-center hover:underline focus-visible:outline-2 focus-visible:outline-brand-tomato"
               >
                 pricing
               </a>
@@ -62,7 +65,7 @@ export default function Nav() {
             <li className="w-[60%] mx-auto my-4 lg:my-0">
               <a
                 href="#"
-                className="uppercase block text-lg font-barlow-condensed font-bold text-brand-mysterious-night text-center hover:underline"
+                className="uppercase block text-lg font-barlow-condensed font-bold text-brand-mysterious-night text-center hover:underline focus-visible:outline-2 focus-visible:outline-brand-tomato"
               >
                 login
               </a>

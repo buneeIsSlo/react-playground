@@ -27,7 +27,7 @@ export default function Intro() {
             Project planning and time tracking for agile teams
           </p>
           <div className="app__intro-bot mt-4 lg:mt-16 flex items-center gap-5">
-            <button className="app__intro-cta bg-brand-tomato hover:bg-brand-tomato/80 font-barlow-condensed py-2 px-6 text-lg font-bold uppercase text-brand-light-grey rounded-md">
+            <button className="app__intro-cta bg-brand-tomato hover:bg-brand-tomato/80 font-barlow-condensed py-2 px-6 text-lg font-bold uppercase text-brand-light-grey rounded-md focus-visible:outline-2 focus-visible:outline-brand-mysterious-night focus-visible:outline-offset-4">
               schedule a demo
             </button>
             <span className="text-brand-grey text-sm lg:text-base font-barlow-condensed uppercase tracking-widest">

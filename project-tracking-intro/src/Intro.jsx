@@ -6,7 +6,7 @@ export default function Intro() {
           <div className="h-full w-full flex items-center sm:justify-center overflow-hidden relative before:absolute before:right-0 lg:before:top-0 before:h-full lg:before:h-[55%] before:w-1/2 lg:before:w-full before:bg-brand-light-grey before:rounded-bl-[3.5rem]">
             <img
               className="scale-150 lg:scale-[3] absolute sm:relative right-[-60px] lg:right-[-10rem] max-h-[160px] mt-20 animate-fade-in"
-              src="/public/images/illustration-devices.svg"
+              src="/images/illustration-devices.svg"
               alt=""
             />
           </div>

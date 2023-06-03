@@ -9,19 +9,15 @@ export default function Nav() {
         href="#"
         className="focus-visible:outline-2 focus-visible:outline-brand-tomato animate-scale-down"
       >
-        <img className="scale-[0.8]" src="/public/images/logo.svg" alt="" />
+        <img className="scale-[0.8]" src="/images/logo.svg" alt="" />
       </a>
       <div className="">
         <button
           className="p-2 lg:hidden focus-visible:outline-2 focus-visible:outline-brand-tomato"
           onClick={() => setNavHidden(!navHidden)}
         >
-          {navHidden && (
-            <img src="/public/images/icon-hamburger.svg" alt="hamburger" />
-          )}
-          {!navHidden && (
-            <img src="/public/images/icon-close.svg" alt="close" />
-          )}
+          {navHidden && <img src="images/icon-hamburger.svg" alt="hamburger" />}
+          {!navHidden && <img src="images/icon-close.svg" alt="close" />}
         </button>
         <nav
           className={`${

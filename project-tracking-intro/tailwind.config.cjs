@@ -16,6 +16,20 @@ module.exports = {
         "barlow": ["Barlow", "sans-serif"],
         "barlow-condensed": ["'Barlow Condensed'", "sans-serif"],
       },
+      animation: {
+        'fade-in': 'fadeIn 1s ease-out',
+        "scale-down": 'scaleDown 1s ease-in-out'
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        scaleDown: {
+          '0%': { transform: "scale(1.05)" },
+          '100%': { transform: "scale(1)" },
+        }
+      }
     },
   },
   plugins: [],

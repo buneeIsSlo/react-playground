@@ -7,7 +7,7 @@ export default function Nav() {
     <header className="app__header px-9 h-20 w-full lg:h-32 absolute top-0 left-0 flex justify-between items-center lg:px-[8%]  z-10">
       <a
         href="#"
-        className="focus-visible:outline-2 focus-visible:outline-brand-tomato"
+        className="focus-visible:outline-2 focus-visible:outline-brand-tomato animate-scale-down"
       >
         <img className="scale-[0.8]" src="/public/images/logo.svg" alt="" />
       </a>
@@ -28,7 +28,7 @@ export default function Nav() {
             navHidden ? "hidden " : ""
           } bg-white w-[80%] mx-9 rounded absolute top-24 left-[50%] translate-x-[-60%] shadow-2xl md:translate-x-[-55%] lg:w-full lg:relative lg:top-0 lg:left-0 lg:translate-x-0 lg:block lg:bg-transparent lg:shadow-none`}
         >
-          <ul className="flex flex-col top-0 left-0 lg:flex-row lg:gap-10">
+          <ul className="flex flex-col top-0 left-0 lg:flex-row lg:gap-10 animate-scale-down">
             <li className="w-[60%] mx-auto mt-4 lg:mt-0">
               <a
                 href="#"

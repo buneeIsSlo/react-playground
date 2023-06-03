@@ -11,7 +11,7 @@ export default function Intro() {
             />
           </div>
         </div>
-        <div className="app__intro px-8 mt-4 lg:row-start-1 lg:row-end-3 lg:grid lg:place-content-center">
+        <div className="app__intro px-8 mt-4 lg:row-start-1 lg:row-end-3 md:grid md:place-content-center">
           <div className="app__intro-top mt-4 flex items-center gap-4">
             <span className="app__intro-pill text-sm lg:text-base text-brand-light-grey font-barlow-condensed font-bold uppercase bg-brand-maritime-blue px-3 py-0.4 rounded-full">
               new

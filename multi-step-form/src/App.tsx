@@ -1,10 +1,10 @@
 import "./App.css";
-import PersonalDetails from "./components/forms/PersonalDetails";
+import FormContainer from "./components/FormContainer";
 
 function App() {
   return (
     <>
-      <PersonalDetails />
+      <FormContainer />
     </>
   );
 }

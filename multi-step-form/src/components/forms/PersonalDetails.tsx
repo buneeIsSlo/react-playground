@@ -32,7 +32,7 @@ export default function PersonalDetails() {
   const { appState } = useContext(AppContext);
 
   return (
-    <Form.Root className="lg:mt-2">
+    <div className="lg:mt-2">
       {fields.map((field) => (
         <InputField
           key={field.id}
@@ -41,17 +41,18 @@ export default function PersonalDetails() {
           errorMessage={appState[field.id].error}
         />
       ))}
-    </Form.Root>
+    </div>
   );
 }
 
 function InputField(props: IInputFieldProps) {
   const { id, name, placeholder, value, errorMessage } = props;
   const { appDispatch } = useContext(AppContext);
+  const borderStyle = errorMessage ? "border-secondary" : "border-neutral-300";
 
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
     const args = [e.target.id, e.target.value];
-    appDispatch({ type: "logState", value: args });
+    appDispatch({ type: "setUserDetails", value: args });
   }
 
   return (
@@ -71,7 +72,7 @@ function InputField(props: IInputFieldProps) {
           <input
             type={id}
             id={id}
-            className="border-neutral-300 w-full rounded border px-4 py-2 text-primary-dark outline-none focus:border-primary"
+            className={`${borderStyle} w-full rounded border px-4 py-2 text-primary-dark outline-none focus:border-primary`}
             value={value}
             onChange={handleInputChange}
             placeholder={placeholder}

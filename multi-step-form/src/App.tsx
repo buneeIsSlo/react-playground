@@ -1,8 +1,10 @@
 import "./App.css";
 import React from "react";
 import { useImmerReducer } from "use-immer";
+import * as Form from "@radix-ui/react-form";
 import FormContainer from "./components/FormContainer";
 import { IFormState } from "./types";
+import FormNavigation from "./components/forms/FormNavigation";
 
 const initialState: IFormState = {
   step: 0,
@@ -15,21 +17,6 @@ const initialState: IFormState = {
   isCompleted: false,
 };
 
-function reducer(
-  draft: IFormState,
-  action: { type: string; value?: any }
-): void {
-  switch (action.type) {
-    case "logState": {
-      const [input, value] = action.value;
-
-      draft[input] = { value, error: "" };
-      console.log([input, value]);
-      return;
-    }
-  }
-}
-
 export const AppContext = React.createContext<{
   appState: IFormState;
   appDispatch: React.Dispatch<{ type: string; value?: any }>;
@@ -40,18 +27,40 @@ export const AppContext = React.createContext<{
   },
 });
 
-function App() {
+export function App() {
   const [formState, dispatch] = useImmerReducer(reducer, initialState);
 
   return (
-    <>
-      <AppContext.Provider
-        value={{ appState: formState, appDispatch: dispatch }}
-      >
+    <AppContext.Provider value={{ appState: formState, appDispatch: dispatch }}>
+      <Form.Root className="flex flex-col justify-between lg:w-full">
         <FormContainer />
-      </AppContext.Provider>
-    </>
+        <Form.Submit asChild>
+          <FormNavigation />
+        </Form.Submit>
+      </Form.Root>
+    </AppContext.Provider>
   );
 }
 
+function reducer(
+  draft: IFormState,
+  action: { type: string; value?: any }
+): void {
+  switch (action.type) {
+    case "setUserDetails": {
+      const [input, value] = action.value;
+      draft[input] = { value, error: "" };
+      return;
+    }
+    case "setError": {
+      const input = action.value;
+      const errorMessage =
+        draft[input].value === "" ? "This field is required" : "Invalid input";
+      draft[input].error = errorMessage;
+    }
+  }
+}
+
 export default App;
+
+// TODO Add props to radix primitives

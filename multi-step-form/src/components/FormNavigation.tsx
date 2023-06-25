@@ -22,10 +22,17 @@ function FormNavigation() {
     }
   }
 
+  function handleBackClick(e: React.MouseEvent) {
+    e.preventDefault();
+  }
+
   return (
     <div className="fixed bottom-0 flex w-full bg-white p-4 lg:static lg:px-20">
       {appState.step > 0 && (
-        <button className="font-medium text-neutral-400 hover:text-primary-dark">
+        <button
+          className="font-medium text-neutral-400 hover:text-primary-dark"
+          onClick={handleBackClick}
+        >
           Go Back
         </button>
       )}

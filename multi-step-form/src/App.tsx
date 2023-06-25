@@ -1,10 +1,11 @@
 import "./App.css";
-import React from "react";
+import React, { createContext } from "react";
 import { useImmerReducer } from "use-immer";
 import * as Form from "@radix-ui/react-form";
 import FormContainer from "./components/FormContainer";
 import { IFormState } from "./types";
-import FormNavigation from "./components/forms/FormNavigation";
+import FormNavigation from "./components/FormNavigation";
+import Sidebar from "./components/Sidebar";
 
 const initialState: IFormState = {
   step: 0,
@@ -17,7 +18,7 @@ const initialState: IFormState = {
   isCompleted: false,
 };
 
-export const AppContext = React.createContext<{
+export const AppContext = createContext<{
   appState: IFormState;
   appDispatch: React.Dispatch<{ type: string; value?: any }>;
 }>({
@@ -32,12 +33,15 @@ export function App() {
 
   return (
     <AppContext.Provider value={{ appState: formState, appDispatch: dispatch }}>
-      <Form.Root className="flex flex-col justify-between lg:w-full">
-        <FormContainer />
-        <Form.Submit asChild>
-          <FormNavigation />
-        </Form.Submit>
-      </Form.Root>
+      <div className="relative h-screen bg-neutral-200 lg:flex lg:h-[600px] lg:w-[925.5px] lg:rounded-2xl lg:bg-white lg:p-4 lg:shadow-lg">
+        <Sidebar />
+        <Form.Root className="flex flex-col justify-between lg:w-full">
+          <FormContainer />
+          <Form.Submit asChild>
+            <FormNavigation />
+          </Form.Submit>
+        </Form.Root>
+      </div>
     </AppContext.Provider>
   );
 }

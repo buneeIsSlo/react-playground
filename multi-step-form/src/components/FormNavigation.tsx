@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { AppContext } from "../../App";
-import { steps } from "./forms";
+import { AppContext } from "../App";
+import { steps } from "./forms/forms";
 
 function FormNavigation() {
   const { appState, appDispatch } = useContext(AppContext);

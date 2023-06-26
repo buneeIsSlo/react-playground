@@ -61,6 +61,14 @@ function reducer(
       const errorMessage =
         draft[input].value === "" ? "This field is required" : "Invalid input";
       draft[input].error = errorMessage;
+      return;
+    }
+    case "setPlan": {
+      draft.plan = action.value;
+      return;
+    }
+    case "togglePeriod": {
+      draft.period = draft.period === "Monthly" ? "Yearly" : "Monthly";
     }
   }
 }

@@ -29,7 +29,7 @@ function Plan() {
     <>
       <div
         className={
-          "plans my-5 grid max-h-[233px] gap-3 lg:mb-8 lg:mt-10 lg:grid-cols-3 lg:gap-5 transition-all"
+          "plans my-5 grid max-h-[233px] gap-3 lg:mb-8 lg:mt-10 lg:grid-cols-3 lg:gap-5"
         }
       >
         {options.map((option, index) => (

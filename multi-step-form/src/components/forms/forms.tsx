@@ -1,3 +1,4 @@
+import AddOns from "./AddOns";
 import PersonalDetails from "./PersonalDetails";
 import Plan from "./Plan";
 
@@ -17,6 +18,11 @@ export const forms: IForms[] = [
     header: "Select your plan",
     description: "You have the option of monthly or yearly billing.",
     form: <Plan />,
+  },
+  {
+    header: "Pick add-ons",
+    description: "Add-ons help enhance your gaming experience.",
+    form: <AddOns />,
   },
 ];
 

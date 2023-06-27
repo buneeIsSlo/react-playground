@@ -3,9 +3,11 @@ import React, { createContext } from "react";
 import { useImmerReducer } from "use-immer";
 import * as Form from "@radix-ui/react-form";
 import FormContainer from "./components/FormContainer";
+import { steps } from "./components/forms/forms";
 import { IFormState } from "./types";
 import FormNavigation from "./components/FormNavigation";
 import Sidebar from "./components/Sidebar";
+import { findAddOnItem } from "./utils";
 
 const initialState: IFormState = {
   step: 0,
@@ -51,6 +53,15 @@ function reducer(
   action: { type: string; value?: any }
 ): void {
   switch (action.type) {
+    case "next": {
+      if (draft.step < steps - 1) draft.step += 1;
+      else draft.isCompleted = true;
+      return;
+    }
+    case "back": {
+      draft.step -= 1;
+      return;
+    }
     case "setUserDetails": {
       const [input, value] = action.value;
       draft[input] = { value, error: "" };
@@ -69,6 +80,21 @@ function reducer(
     }
     case "togglePeriod": {
       draft.period = draft.period === "Monthly" ? "Yearly" : "Monthly";
+      return;
+    }
+    case "setAddOns": {
+      const addOn = action.value;
+
+      if (findAddOnItem(addOn.heading, draft.addOns)) {
+        const filteredAddOns = draft.addOns.filter(
+          (obj) => obj.heading !== addOn.heading
+        );
+        draft.addOns = filteredAddOns;
+        return;
+      }
+      draft.addOns = [...draft.addOns, addOn];
+
+      return;
     }
   }
 }

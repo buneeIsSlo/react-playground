@@ -6,6 +6,8 @@ function FormNavigation() {
   const { appState, appDispatch } = useContext(AppContext);
   const bgStyle = appState.step < steps - 1 ? "bg-primary-dark" : "bg-primary";
 
+  if (appState.isCompleted) return null;
+
   function handleNextClick(e: React.MouseEvent) {
     e.preventDefault();
 
@@ -20,10 +22,13 @@ function FormNavigation() {
         return;
       }
     }
+
+    appDispatch({ type: "next" });
   }
 
   function handleBackClick(e: React.MouseEvent) {
     e.preventDefault();
+    appDispatch({ type: "back" });
   }
 
   return (

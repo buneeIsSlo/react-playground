@@ -1,4 +1,3 @@
-import "./App.css";
 import React, { createContext } from "react";
 import { useImmerReducer } from "use-immer";
 import * as Form from "@radix-ui/react-form";
@@ -60,6 +59,13 @@ function reducer(
     }
     case "back": {
       draft.step -= 1;
+      return;
+    }
+    case "backToStep": {
+      const toStep = action.value - 1;
+      if (toStep < 0) draft.step = 0;
+      else if (toStep >= steps) draft.step = steps - 1;
+      else draft.step = toStep;
       return;
     }
     case "setUserDetails": {

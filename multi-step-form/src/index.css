@@ -2,3 +2,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  min-height: 100vh;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.plans::-webkit-scrollbar {
+  width: 3px;
+}
+
+.plans::-webkit-scrollbar-thumb {
+  background-color: hsl(229, 24%, 87%);
+}

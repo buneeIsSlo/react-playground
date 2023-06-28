@@ -1,4 +1,5 @@
 import AddOns from "./AddOns";
+import Confirmation from "./Confirmation";
 import PersonalDetails from "./PersonalDetails";
 import Plan from "./Plan";
 
@@ -23,6 +24,11 @@ export const forms: IForms[] = [
     header: "Pick add-ons",
     description: "Add-ons help enhance your gaming experience.",
     form: <AddOns />,
+  },
+  {
+    header: "Finishing up",
+    description: "Double-check everything looks OK before confirming.",
+    form: <Confirmation />,
   },
 ];
 

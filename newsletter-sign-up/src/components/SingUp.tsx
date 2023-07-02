@@ -10,17 +10,19 @@ const list: string[] = [
 
 function SingUp() {
   return (
-    <div className="h-screen grid grid-rows-[1fr,1fr]">
-      <div className="w-full h-full max-h-fit bg-illus-sm bg-no-repeat bg-top bg-contain"></div>
-      <div className="outline outline-black">
-        <h1>Stay updated!</h1>
-        <p>Join 60,000+ product managers receiving monthly updates on:</p>
+    <div className="h-screen grid grid-rows-[30fr,70fr]">
+      <div className="w-full h-auto bg-illus-sm bg-no-repeat bg-top"></div>
+      <div className="px-5">
+        <h1 className="font-bold text-4xl pb-6">Stay updated!</h1>
+        <p className="color pb-6">
+          Join 60,000+ product managers receiving monthly updates on:
+        </p>
         <ul>
           {list.map((item: string, i: number) => {
             return (
-              <li key={i} className="w-full flex align-middle gap-3">
+              <li key={i} className="w-full flex align-top gap-3 pb-4">
                 <img src={ListIcon} alt="" aria-hidden="true" />
-                <p>{item}</p>
+                <p className="leading-relaxed">{item}</p>
               </li>
             );
           })}
@@ -28,7 +30,7 @@ function SingUp() {
         <Form.Root>
           <Form.Field name="email">
             <div>
-              <Form.Label>Email</Form.Label>
+              <Form.Label>Email address</Form.Label>
               <Form.Message match="valueMissing">
                 Please enter your email
               </Form.Message>

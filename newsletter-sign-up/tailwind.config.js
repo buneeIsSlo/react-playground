@@ -20,7 +20,13 @@ export default {
       backgroundImage: {
         "illus-sm": "url('./src/assets/images/illustration-sign-up-mobile.svg')",
         "illus-lg": "url('./src/assets/images/illustration-sign-up-desktop.svg')",
-      }
+      },
+      screens: {
+        'mobile': '375px',
+        'tablet': '640px',
+        'laptop': '1024px',
+        'desktop': '1280px',
+      },
     },
   },
   plugins: [],

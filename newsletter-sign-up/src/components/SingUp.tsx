@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import ListIcon from "../assets/images/icon-list.svg";
 import * as Form from "@radix-ui/react-form";
 import Button from "./Button";
@@ -9,9 +10,40 @@ const list: string[] = [
   "And much more!",
 ];
 
-function SingUp() {
+export default function SingUp() {
+  const [email, setEmail] = useState("-");
+  const valid =
+    "hover:shadow-[0_0_0_1px_#242742] focus:shadow-[0_0_0_1px_#242742]";
+  const invalid = "border-primary-tomato text-primary-tomato";
+  const [isValid, setIsValid] = useState(true);
+  const borderStyles = isValid ? valid : invalid;
+
+  const isEmailValid = (email: string) => {
+    console.log(
+      /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email),
+      "zero"
+    );
+    return /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email);
+  };
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+    return;
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!isEmailValid(email)) {
+      setIsValid(false);
+      return;
+    }
+
+    setIsValid(true);
+    console.log("PERFECT");
+  };
+
   return (
-    <div className="h-screen bg-secondary-100 max-w-[380px] mx-auto laptop:h-auto laptop:w-[90%] laptop:max-w-none laptop:px-6 laptop:py-6 laptop:flex laptop:flex-row-reverse laptop:gap-8 laptop:rounded-3xl">
+    <div className="bg-secondary-100 h-auto max-w-[380px] mx-auto laptop:h-auto laptop:w-[90%] laptop:max-w-none laptop:px-6 laptop:py-6 laptop:flex laptop:flex-row-reverse laptop:gap-8 laptop:rounded-3xl">
       <Illustration />
       <div className="laptop:flex laptop:flex-col laptop:justify-end">
         <div className="px-5 mt-9 laptop:px-9 laptop:mt-0">
@@ -31,7 +63,10 @@ function SingUp() {
               );
             })}
           </ul>
-          <Form.Root className="pt-6 pb-8 flex flex-col gap-6">
+          <Form.Root
+            className="pt-6 pb-8 flex flex-col gap-6"
+            onSubmit={handleSubmit}
+          >
             <Form.Field name="email">
               <div className="flex justify-between align-middle">
                 <Form.Label className="text-xs font-bold py-1">
@@ -44,23 +79,33 @@ function SingUp() {
                   Please enter your email
                 </Form.Message>
                 <Form.Message
-                  className="text-primary-tomato text-xs font-bold py-1"
+                  className="FormMessage text-primary-tomato text-xs font-bold py-1"
                   match="typeMismatch"
                 >
                   Please provide a valid email
                 </Form.Message>
               </div>
-              <Form.Control asChild>
-                <input
-                  className="box-border w-full inline-flex px-6 py-4 appearance-none border outline-none items-center justify-center rounded-md text-[15px] leading-none hover:shadow-[0_0_0_1px_#242742] focus:shadow-[0_0_0_1px_#242742]"
-                  type="email"
-                  placeholder="email@company.com"
-                  required
-                />
-              </Form.Control>
+              <Form.ValidityState>
+                {(validity) => (
+                  <Form.Control className="FormControl" asChild>
+                    <input
+                      className={`box-border w-full inline-flex px-6 py-4 appearance-none border outline-none rounded-md text-[15px] leading-none ${
+                        validity ? invalid : valid
+                      }`}
+                      type="email"
+                      value={email}
+                      placeholder="email@company.com"
+                      onChange={handleEmailChange}
+                      required
+                    />
+                  </Form.Control>
+                )}
+              </Form.ValidityState>
             </Form.Field>
             <Form.Submit className="w-full" asChild>
-              <Button textProp={"Subscribe to monthly newsletter"} />
+              <Button onClickAction={() => handleSubmit}>
+                Subscribe to monthly newsletter
+              </Button>
             </Form.Submit>
           </Form.Root>
         </div>
@@ -69,4 +114,10 @@ function SingUp() {
   );
 }
 
-export default SingUp;
+/* 
+  const isInputValid = (value: string) => {
+    console.log("any calls??");
+    const emailRegexp = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    return emailRegexp.test(value);
+  };
+ */

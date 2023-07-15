@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import { useContext } from "react";
 import ListIcon from "../assets/images/icon-list.svg";
 import * as Form from "@radix-ui/react-form";
 import Button from "./Button";
 import Illustration from "./Illustration";
+import { AppContext } from "../App";
 
 const list: string[] = [
   "Product discovery and building what matters",
@@ -11,35 +12,15 @@ const list: string[] = [
 ];
 
 export default function SingUp() {
-  const [email, setEmail] = useState("-");
-  const valid =
-    "hover:shadow-[0_0_0_1px_#242742] focus:shadow-[0_0_0_1px_#242742]";
-  const invalid = "border-primary-tomato text-primary-tomato";
-  const [isValid, setIsValid] = useState(true);
-  const borderStyles = isValid ? valid : invalid;
-
-  const isEmailValid = (email: string) => {
-    console.log(
-      /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email),
-      "zero"
-    );
-    return /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email);
-  };
-
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-    return;
-  };
+  // const { setFormSubmitted } = useContext(AppContext) ?? {};
+  const context = useContext(AppContext);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!isEmailValid(email)) {
-      setIsValid(false);
-      return;
+    if (context && context.setFormSubmitted) {
+      context.setFormSubmitted(true);
     }
-
-    setIsValid(true);
-    console.log("PERFECT");
+    console.log("Form submitted with validation");
   };
 
   return (
@@ -80,27 +61,20 @@ export default function SingUp() {
                 </Form.Message>
                 <Form.Message
                   className="FormMessage text-primary-tomato text-xs font-bold py-1"
-                  match="typeMismatch"
+                  match="patternMismatch"
                 >
                   Please provide a valid email
                 </Form.Message>
               </div>
-              <Form.ValidityState>
-                {(validity) => (
-                  <Form.Control className="FormControl" asChild>
-                    <input
-                      className={`box-border w-full inline-flex px-6 py-4 appearance-none border outline-none rounded-md text-[15px] leading-none ${
-                        validity ? invalid : valid
-                      }`}
-                      type="email"
-                      value={email}
-                      placeholder="email@company.com"
-                      onChange={handleEmailChange}
-                      required
-                    />
-                  </Form.Control>
-                )}
-              </Form.ValidityState>
+              <Form.Control className="FormControl" asChild>
+                <input
+                  className={`box-border w-full inline-flex px-6 py-4 appearance-none border outline-none rounded-md text-[15px] leading-none hover:shadow-[0_0_0_1px_#242742] focus:shadow-[0_0_0_1px_#242742] data-[invalid=true]:border-primary-tomato data-[invalid=true]:text-primary-tomato data-[invalid=true]:hover:shadow-none data-[invalid=true]:focus:shadow-none`}
+                  type="email"
+                  placeholder="email@company.com"
+                  pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}$"
+                  required
+                />
+              </Form.Control>
             </Form.Field>
             <Form.Submit className="w-full" asChild>
               <Button onClickAction={() => handleSubmit}>
@@ -113,11 +87,3 @@ export default function SingUp() {
     </div>
   );
 }
-
-/* 
-  const isInputValid = (value: string) => {
-    console.log("any calls??");
-    const emailRegexp = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-    return emailRegexp.test(value);
-  };
- */

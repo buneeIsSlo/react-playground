@@ -1,9 +1,9 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import ListIcon from "../assets/images/icon-list.svg";
 import * as Form from "@radix-ui/react-form";
 import Button from "./Button";
 import Illustration from "./Illustration";
-import { AppContext } from "../App";
+import { EmailContext, FormContext } from "../App";
 
 const list: string[] = [
   "Product discovery and building what matters",
@@ -12,15 +12,18 @@ const list: string[] = [
 ];
 
 export default function SingUp() {
-  // const { setFormSubmitted } = useContext(AppContext) ?? {};
-  const context = useContext(AppContext);
+  const { setFormSubmitted } = useContext(FormContext);
+  const { setEmailSubmitted } = useContext(EmailContext);
+  const [email, setEmail] = useState<string>("");
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (context && context.setFormSubmitted) {
-      context.setFormSubmitted(true);
-    }
-    console.log("Form submitted with validation");
+    setFormSubmitted(true);
+    setEmailSubmitted(email);
   };
 
   return (
@@ -68,9 +71,11 @@ export default function SingUp() {
               </div>
               <Form.Control className="FormControl" asChild>
                 <input
-                  className={`box-border w-full inline-flex px-6 py-4 appearance-none border outline-none rounded-md text-[15px] leading-none hover:shadow-[0_0_0_1px_#242742] focus:shadow-[0_0_0_1px_#242742] data-[invalid=true]:border-primary-tomato data-[invalid=true]:text-primary-tomato data-[invalid=true]:hover:shadow-none data-[invalid=true]:focus:shadow-none`}
+                  className={`box-border w-full inline-flex px-6 py-4 appearance-none border outline-none rounded-md text-[15px] leading-none hover:shadow-[0_0_0_1px_#242742] focus:shadow-[0_0_0_1px_#242742] data-[invalid=true]:border-primary-tomato data-[invalid=true]:text-primary-tomato data-[invalid=true]:bg-rose-100 data-[invalid=true]:hover:shadow-none data-[invalid=true]:focus:shadow-none`}
                   type="email"
+                  value={email}
                   placeholder="email@company.com"
+                  onChange={handleInputChange}
                   pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}$"
                   required
                 />

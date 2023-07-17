@@ -27,7 +27,7 @@ export default function SingUp() {
   };
 
   return (
-    <div className="bg-secondary-100 h-auto max-w-[380px] mx-auto laptop:h-auto laptop:w-[90%] laptop:max-w-none laptop:px-6 laptop:py-6 laptop:flex laptop:flex-row-reverse laptop:gap-8 laptop:rounded-3xl">
+    <div className="bg-secondary-100 h-auto max-w-[380px] mx-auto laptop:h-auto laptop:w-[90%] laptop:max-w-none laptop:px-6 laptop:py-6 laptop:flex laptop:flex-row-reverse laptop:gap-8 laptop:rounded-3xl laptop:shadow-xl motion-safe:animate-popup">
       <Illustration />
       <div className="laptop:flex laptop:flex-col laptop:justify-end">
         <div className="px-5 mt-9 laptop:px-9 laptop:mt-0">

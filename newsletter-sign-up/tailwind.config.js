@@ -1,3 +1,5 @@
+import { transform } from 'typescript'
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -27,6 +29,15 @@ export default {
         'laptop': '1024px',
         'desktop': '1280px',
       },
+      animation: {
+        popup: "popup 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards"
+      },
+      keyframes: {
+        popup: {
+          "0%": { transform: "scale(0.8)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" }
+        }
+      }
     },
   },
   plugins: [],

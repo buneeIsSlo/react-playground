@@ -1,4 +1,3 @@
-import "./App.css";
 import { useState, createContext, Dispatch, SetStateAction } from "react";
 import SingUp from "./components/SingUp";
 import Thanks from "./components/Thanks";

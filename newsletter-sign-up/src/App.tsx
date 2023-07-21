@@ -1,5 +1,5 @@
 import { useState, createContext, Dispatch, SetStateAction } from "react";
-import SingUp from "./components/SingUp";
+import SignUp from "./components/SignUp";
 import Thanks from "./components/Thanks";
 
 interface IFormContextValue {
@@ -34,7 +34,7 @@ export function App() {
     <FormContext.Provider value={{ formSubmitted, setFormSubmitted }}>
       <EmailContext.Provider value={{ emailSubmitted, setEmailSubmitted }}>
         <div className="w-full h-auto laptop:bg-secondary-300 laptop:h-screen laptop:grid laptop:place-content-center">
-          {!formSubmitted ? <SingUp /> : <Thanks />}
+          {!formSubmitted ? <SignUp /> : <Thanks />}
         </div>
       </EmailContext.Provider>
     </FormContext.Provider>

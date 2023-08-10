@@ -1,12 +1,48 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Square from "./Square";
 
-const INITIAL_GAME_STATE = ["X", "X", "o", "", "", "", "", "", ""];
+type TScores = {
+  [key: string]: number;
+};
+
+const INITIAL_GAME_STATE = ["", "", "", "", "", "", "", "", ""];
+const INITIAL_SCORES: TScores = { X: 0, O: 0 };
+const WINNING_COMBOS = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6],
+];
 
 function Game() {
   let [gameState, setGameState] = useState(INITIAL_GAME_STATE);
-  const handleCellClick = () => {
-    return;
+  const [currentPlayer, setCurrentPlayer] = useState("X");
+  const [scores, setScores] = useState(INITIAL_SCORES);
+
+  const changePlayer = () => {
+    setCurrentPlayer(currentPlayer === "X" ? "O" : "X");
+  };
+
+  useEffect(() => {
+    if (gameState === INITIAL_GAME_STATE) {
+      return;
+    }
+    changePlayer();
+  }, [gameState]);
+
+  const handleCellClick = (e: any) => {
+    const cellIndex = Number(e.target.getAttribute("data-cell-index"));
+
+    const currentValue = gameState[cellIndex];
+    if (currentValue) return;
+
+    const newValues = [...gameState];
+    newValues[cellIndex] = currentPlayer;
+    setGameState(newValues);
   };
 
   return (

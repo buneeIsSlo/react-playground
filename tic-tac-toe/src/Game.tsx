@@ -31,8 +31,53 @@ function Game() {
     if (gameState === INITIAL_GAME_STATE) {
       return;
     }
-    changePlayer();
+    checkForWinner();
   }, [gameState]);
+
+  const resetBoard = () => setGameState(INITIAL_GAME_STATE);
+
+  const handleWin = () => {
+    alert(`Congrats player ${currentPlayer}! You are the winner!`);
+    resetBoard();
+  };
+
+  const handleDraw = () => {
+    alert("Oops, It looks like a draw!");
+    resetBoard();
+  };
+
+  const checkForWinner = (): void => {
+    let roundWon = false;
+
+    for (let i = 0; i < WINNING_COMBOS.length; i++) {
+      const winCombo = WINNING_COMBOS[i];
+
+      const a = gameState[winCombo[0]];
+      const b = gameState[winCombo[1]];
+      const c = gameState[winCombo[2]];
+
+      if ([a, b, c].includes("")) {
+        continue;
+      }
+
+      if (a === b && b === c) {
+        roundWon = true;
+        break;
+      }
+    }
+
+    if (roundWon) {
+      setTimeout(() => handleWin(), 500);
+      return;
+    }
+
+    if (!gameState.includes("")) {
+      setTimeout(() => handleDraw(), 500);
+      return;
+    }
+
+    changePlayer();
+  };
 
   const handleCellClick = (e: any) => {
     const cellIndex = Number(e.target.getAttribute("data-cell-index"));

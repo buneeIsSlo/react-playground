@@ -19,13 +19,9 @@ const WINNING_COMBOS = [
 ];
 
 function Game() {
-  let [gameState, setGameState] = useState(INITIAL_GAME_STATE);
+  const [gameState, setGameState] = useState(INITIAL_GAME_STATE);
   const [currentPlayer, setCurrentPlayer] = useState("X");
   const [scores, setScores] = useState(INITIAL_SCORES);
-
-  const changePlayer = () => {
-    setCurrentPlayer(currentPlayer === "X" ? "O" : "X");
-  };
 
   useEffect(() => {
     if (gameState === INITIAL_GAME_STATE) {
@@ -34,10 +30,28 @@ function Game() {
     checkForWinner();
   }, [gameState]);
 
+  useEffect(() => {
+    const storedScores = localStorage.getItem("scores");
+    if (storedScores) {
+      setScores(JSON.parse(storedScores));
+    }
+  }, []);
+
+  const changePlayer = () => {
+    setCurrentPlayer(currentPlayer === "X" ? "O" : "X");
+  };
+
   const resetBoard = () => setGameState(INITIAL_GAME_STATE);
 
   const handleWin = () => {
     alert(`Congrats player ${currentPlayer}! You are the winner!`);
+
+    const newPlayerScore = scores[currentPlayer] + 1;
+    const newScores = { ...scores };
+    newScores[currentPlayer] = newPlayerScore;
+    setScores(newScores);
+    localStorage.setItem("scores", JSON.stringify(newScores));
+
     resetBoard();
   };
 
@@ -105,7 +119,17 @@ function Game() {
             />
           ))}
         </div>
-        <div>Scores Go Here</div>
+        <div className="mx-auto w-96 text-2xl text-serif">
+          <p className="text-white mt-5">
+            Next Player: <span>{currentPlayer}</span>
+          </p>
+          <p className="text-white mt-5">
+            Player X wins: <span>{scores["X"]}</span>
+          </p>
+          <p className="text-white mt-5">
+            Player O wins: <span>{scores["O"]}</span>
+          </p>
+        </div>
       </div>
     </div>
   );

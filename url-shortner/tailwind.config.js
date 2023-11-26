@@ -6,10 +6,17 @@ export default {
   ],
   theme: {
     screens: {
-      'lg': '768px'
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1200px",
+      "2xl": "1700px",
     },
     fontFamily: {
       'poppins': ['poppins', 'system-ui'],
+    },
+    fontWeight: {
+      "regular": 500,
+      "bold": 700,
     },
     container: {
       padding: {
@@ -20,17 +27,15 @@ export default {
       colors: {
         primary: {
           cyan: "hsl(180, 66%, 49%)",
-          violet: "hsl(257, 27%, 26%)"
-        },
-        secondary: {
-          red: "hsl(0, 87%, 67%)"
+          violet: "hsl(257, 27%, 26%)",
+          red: "hsl(0, 87%, 67%)",
         },
         neutral: {
-          100: "hsl(0, 0%, 75%)",
-          200: "hsl(257, 7%, 63%)",
-          300: "hsl(255, 11%, 22%)",
-          400: "hsl(260, 8%, 14%)",
-        }
+          "n1": "hsl(0, 0%, 75%)",
+          "n2": "hsl(257, 7%, 63%)",
+          "n3": "hsl(255, 11%, 22%)",
+          "n4": "hsl(260, 8%, 14%)",
+        },
       },
       backgroundImage: {
         'form-bg-mobile': "url('/src/assets/images/bg-shorten-mobile.svg')",

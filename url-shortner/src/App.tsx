@@ -2,7 +2,7 @@ import { Header, Hero, MainContent, Cta, Footer } from "./components/layout";
 
 const App = () => {
   return (
-    <div className="h-full bg-zinc-800 text-neutral-100">
+    <div className="h-full text-neutral-n4">
       {/* <Header /> */}
       <Hero />
       <MainContent />

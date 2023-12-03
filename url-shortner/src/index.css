@@ -4,7 +4,7 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-cyan hover:brightness-110 transition ease-out duration-500;
+    @apply bg-primary-cyan text-neutral-50 hover:brightness-110 transition ease-out duration-500;
   }
 }
 

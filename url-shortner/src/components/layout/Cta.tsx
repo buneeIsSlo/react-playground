@@ -19,7 +19,10 @@ const Cta = () => {
         <h2 className="text-center text-2xl font-bold text-white md:text-3xl lg:text-4xl">
           Boost your links today
         </h2>
-        <a className="btn-primary mx-auto mt-5 block w-fit rounded-full px-12 py-4 font-bold">
+        <a
+          href="#"
+          className="btn-primary mx-auto mt-5 block w-fit rounded-full px-12 py-4 font-bold"
+        >
           Get Started
         </a>
       </div>

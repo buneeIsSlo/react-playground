@@ -10,18 +10,18 @@ interface Idata {
 const data: Idata[] = [
   {
     icon: iconBrand,
-    title: "title",
-    desc: "description",
+    title: "Brand Recognition",
+    desc: "Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.",
   },
   {
     icon: iconRecords,
-    title: "title",
-    desc: "description",
+    title: "Detailed Records",
+    desc: "Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.",
   },
   {
     icon: iconCustom,
-    title: "title",
-    desc: "description",
+    title: "Fully Customizable",
+    desc: "Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.",
   },
 ];
 
@@ -33,20 +33,25 @@ const MainContent = () => {
     >
       <div className="container mx-auto">
         <LinkShortener />
-        <div>
+        <div className="pt-16 lg:pt-24">
           <div>
             <h2 className="text-center text-2xl font-bold text-neutral-n4 md:text-3xl lg:text-4xl">
               Advanced Statistics
             </h2>
-            <p className="mx-auto max-w-[30ch] py-6 text-center text-neutral-n2">
+            <p className="mx-auto max-w-[30ch] py-6 text-center text-neutral-n2 lg:max-w-[50ch]">
               Track how your links are performing across the web with our
               advanced statistics dashboard.
             </p>
           </div>
-          <div className="flex flex-col gap-20">
-            {data.map((card) => (
-              <article className="relative rounded-sm bg-white px-2 pt-14">
-                <span className="absolute -top-14 left-[45%] block w-fit rounded-full bg-primary-violet p-6">
+          <div className="flex flex-col gap-28 py-24 lg:flex-row lg:items-start lg:gap-8">
+            {data.map((card, i) => (
+              <article
+                className={`relative rounded-md bg-white px-6 pb-8 pt-14 shadow-sm lg:flex-1 lg:px-8 ${
+                  i > 0 ? `lg:mt-${10 * i}` : ""
+                }`}
+                key={card.title}
+              >
+                <span className="absolute -top-14 left-[40%] block w-fit rounded-full bg-primary-violet p-6 md:left-[45%] lg:left-[10%]">
                   <img
                     src={card.icon}
                     className="block"
@@ -54,8 +59,12 @@ const MainContent = () => {
                     aria-hidden="true"
                   />
                 </span>
-                <h2 className="text-center text-xl font-bold">{card.title}</h2>
-                <p className="text-center">{card.desc}</p>
+                <h2 className="py-4 text-center text-xl font-bold lg:text-left">
+                  {card.title}
+                </h2>
+                <p className="text-center text-neutral-n2 lg:text-left lg:text-base">
+                  {card.desc}
+                </p>
               </article>
             ))}
           </div>

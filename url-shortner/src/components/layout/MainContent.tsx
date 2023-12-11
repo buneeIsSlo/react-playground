@@ -46,9 +46,8 @@ const MainContent = () => {
           <div className="flex flex-col gap-28 py-24 lg:flex-row lg:items-start lg:gap-8">
             {data.map((card, i) => (
               <article
-                className={`relative rounded-md bg-white px-6 pb-8 pt-14 shadow-sm lg:flex-1 lg:px-8 ${
-                  i > 0 ? `lg:mt-${10 * i}` : ""
-                }`}
+                className={"relative rounded-md bg-white px-6 pb-8 pt-14 shadow-sm lg:flex-1 lg:px-8"}
+                style={{ marginTop: `${i * 40}px` }}
                 key={card.title}
               >
                 <span className="absolute -top-14 left-[40%] block w-fit rounded-full bg-primary-violet p-6 md:left-[45%] lg:left-[10%]">

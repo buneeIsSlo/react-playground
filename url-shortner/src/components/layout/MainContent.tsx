@@ -1,13 +1,13 @@
 import { LinkShortener } from "../ui";
 import { iconBrand, iconRecords, iconCustom } from "../../assets/images";
 
-interface Idata {
+type Tdata = {
   icon: string;
   title: string;
   desc: string;
-}
+};
 
-const data: Idata[] = [
+const data: Tdata[] = [
   {
     icon: iconBrand,
     title: "Brand Recognition",
@@ -33,7 +33,7 @@ const MainContent = () => {
     >
       <div className="container mx-auto">
         <LinkShortener />
-        <div className="pt-16 lg:pt-24">
+        <div className="pb-8 pt-16 lg:pt-24">
           <div>
             <h2 className="text-center text-2xl font-bold text-neutral-n4 md:text-3xl lg:text-4xl">
               Advanced Statistics
@@ -43,10 +43,12 @@ const MainContent = () => {
               advanced statistics dashboard.
             </p>
           </div>
-          <div className="flex flex-col gap-28 py-24 lg:flex-row lg:items-start lg:gap-8">
+          <div className="relative flex flex-col gap-28 py-24 before:absolute before:left-[50%] before:top-[20%] before:h-1/2 before:w-3 before:bg-primary-cyan lg:flex-row lg:items-start lg:gap-8 lg:before:left-0 lg:before:top-[45%] lg:before:h-3 lg:before:w-[70%]">
             {data.map((card, i) => (
               <article
-                className={"relative rounded-md bg-white px-6 pb-8 pt-14 shadow-sm lg:flex-1 lg:px-8"}
+                className={
+                  "relative rounded-md bg-white px-6 pb-8 pt-14 shadow-sm lg:flex-1 lg:px-8"
+                }
                 style={{ marginTop: `${i * 40}px` }}
                 key={card.title}
               >

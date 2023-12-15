@@ -7,6 +7,7 @@ import illusWorking from "./illustration-working.svg";
 import iconBrand from "./icon-brand-recognition.svg";
 import iconRecords from "./icon-detailed-records.svg";
 import iconCustom from "./icon-fully-customizable.svg";
+import hamburger from "./hamburger.svg";
 
 export {
     logo,
@@ -18,4 +19,5 @@ export {
     iconBrand,
     iconRecords,
     iconCustom,
+    hamburger,
 }

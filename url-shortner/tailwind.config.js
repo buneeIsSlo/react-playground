@@ -42,7 +42,16 @@ export default {
         'boost-bg-mobile': "url('/src/assets/images/bg-boost-mobile.svg')",
         'form-bg-desktop': "url('/src/assets/images/bg-boost-desktop.svg')",
         'boost-bg-desktop': "url('/src/assets/images/bg-boost-desktop.svg')",
-      }
+      },
+      animation: {
+        popup: "popup 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards"
+      },
+      keyframes: {
+        popup: {
+          "0%": { transform: "scale(0.8)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" }
+        }
+      },
     },
   },
   plugins: [],
